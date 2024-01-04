@@ -8,7 +8,11 @@
     width: 100px;
 }
 
-.login .container .card_login h1 {
+.login .container .card_login .text-center h1 {
+    font-weight: 700;
+}
+
+.login .container .card_login .card-icon h1 {
     font-size: 27px;
     color: #FFB800;
     font-weight: 600;
