@@ -1,0 +1,12 @@
+.form-input-login input::placeholder {
+    margin: 90px;
+}
+
+
+.form-input-login input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #878787 !important;
+    border-radius: 10px;
+    outline: none;
+}

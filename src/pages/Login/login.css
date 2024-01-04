@@ -8,6 +8,11 @@
     width: 100px;
 }
 
+.login .container .card_login {
+    background-color: #f1faee;
+    width: 600px;
+}
+
 .login .container .card_login .text-center h1 {
     font-weight: 700;
 }
@@ -16,4 +21,9 @@
     font-size: 27px;
     color: #FFB800;
     font-weight: 600;
+}
+
+.login .container .card_login form button {
+    background-color: #FF7F0A;
+    color: #FFF;
 }

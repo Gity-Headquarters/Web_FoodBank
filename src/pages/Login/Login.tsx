@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './login.css'
 import { iconFoodbank2 } from '../../image'
 import InputForm from '../../components/Elements/inputForm/InputForm'
-import { login } from '../../service/Authentication'
+// import { login } from '../../service/Authentication'
 function Login() {
 
     const [errorMsg, setErrorMsg] = useState("d-none")
@@ -37,21 +37,18 @@ function Login() {
     return (
         <section className="login" id='login'>
             <div className="container d-grid justify-content-center align-items-center">
-                <div className="card_login ">
+                <div className="card_login p-5 rounded-4">
                     <div className="card-icon">
                         <div className="d-flex justify-content-center mb-2">
                             <img src={iconFoodbank2} alt="icons-login" />
                         </div>
                         <h1 className='text-center'>Food Bank</h1>
                     </div>
-                    <div className="text-center">
-                        <h1>Masuk Admin Food Bank</h1>
-                    </div>
-                    <form >
-                        <InputForm htmlFor="email" title="Email address" onChange={handleChange} type="email" value={formData.email} />
-                        <InputForm htmlFor="password" title="Password" onChange={handleChange} type="password" value={formData.password} />
-                        <p className={` text danger ${errorMsg}`} > error tolol</p>
-                        <button className='btn btn-primary' >Masuk</button>
+                    <form>
+                        <InputForm htmlFor="email" title="Email address" onChange={handleChange} type="email" value={formData.email} placeholder="Enter email" />
+                        <InputForm htmlFor="password" title="Password" onChange={handleChange} type="password" value={formData.password} placeholder="Password" />
+                        <p className={` text danger ${errorMsg}`} > Incorect Email or Password</p>
+                        <button className='btn w-100 fw-semibold fs-5 mt-5' >Login</button>
                     </form>
                 </div>
             </div>
