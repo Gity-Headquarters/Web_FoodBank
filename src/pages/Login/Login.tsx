@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './login.css'
-import { iconFoodbank2 } from '../../image'
+import { logoLogin } from '../../image'
 import InputForm from '../../components/Elements/InputForm/InputForm'
 import { login } from '../../service/Authentication'
 // import { login } from '../../service/Authentication'
@@ -68,7 +68,7 @@ function Login() {
             <div className="card_login p-4 p-sm-5 rounded-4">
                 <div className="card-icon">
                     <div className="d-flex justify-content-center mb-2">
-                        <img src={iconFoodbank2} alt="icons-login" />
+                        <img src={logoLogin} alt="icons-login" />
                     </div>
                     <h1 className='text-center'>Food Bank</h1>
                 </div>

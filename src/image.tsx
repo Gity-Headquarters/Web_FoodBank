@@ -1,5 +1,6 @@
-import iconFoodbank2 from './assets/icon.png'
+import logoLogin from './assets/icons.svg'
+import logoSidebar from './assets/sidebar-logo.svg'
 
 export {
-    iconFoodbank2
+    logoLogin, logoSidebar
 }

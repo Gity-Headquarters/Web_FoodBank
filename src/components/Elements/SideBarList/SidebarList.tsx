@@ -2,15 +2,14 @@
 import { NavLink } from "react-router-dom";
 
 type SidebarItemProps = {
-    icon: JSX.Element,
+    icon: any,
     title: string,
     location: string,
-    condition: string
 }
 
-const SidebarItem: React.FC<SidebarItemProps> = ({ icon, title, location, condition }) => {
+const SidebarItem: React.FC<SidebarItemProps> = ({ icon, title, location, }) => {
     return (
-        <li className={`sidebar-item  ${condition}`}>
+        <li className={`sidebar-item  `}>
             <NavLink to={location} className='sidebar-link'>
                 <div className='iconNavbar'>{icon}</div>
                 <span>{title}</span>
