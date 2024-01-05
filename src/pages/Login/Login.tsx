@@ -7,6 +7,14 @@ import { login } from '../../service/Authentication'
 
 
 function Login() {
+
+    type LoginResponse = {
+        data: string;
+        meta: {
+            status: string;
+        };
+    };
+
     const [buttonLogin, setButtonLogin] = useState(false)
     const [disabled, setDisabled] = useState(true)
     const [errorMsg, setErrorMsg] = useState("d-none")
@@ -17,7 +25,7 @@ function Login() {
     })
 
 
-    const handleChange = (e: any) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value, } = e.target;
         setFormData({ ...formData, [name]: value });
 
@@ -39,7 +47,7 @@ function Login() {
     const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
 
         e.preventDefault();
-        login(formData, (status: boolean, res: { data: string, meta: { status: string } }) => {
+        login(formData, (status: boolean, res: LoginResponse) => {
             if (status) {
                 alert('login success');
                 console.log(res.data);
@@ -51,6 +59,9 @@ function Login() {
             }
         });
     };
+
+    console.log(formData);
+
 
     return (
         <section className="login d-flex p-3 justify-content-center align-items-center" id='login'>
