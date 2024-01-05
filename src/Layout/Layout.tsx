@@ -16,14 +16,14 @@ function Layout({ children }: any) {
                             <SidebarItem
                                 icon={<DashCircle />}
                                 title="Dashboard"
-                                location="/admin/dashboard"
+                                location="/dashboard"
                             />
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <main>
+            <main  >
                 {children}
             </main>
         </>
