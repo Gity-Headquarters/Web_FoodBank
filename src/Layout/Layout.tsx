@@ -11,7 +11,7 @@ function Layout({ children }: any) {
                     <div className="offcanvas-header d-flex justify-content-center">
                         <img src={logoSidebar} alt="" />
                     </div>
-                    <div className="offcanvass-body d-grid  align-items-stretch ">
+                    <div className="offcanvass-body d-grid  align-items-start">
                         <ul className="menu d-grid justify-content-center align-items-center mx-auto p-0 ">
                             <SidebarItem
                                 icon={<DashCircle />}
