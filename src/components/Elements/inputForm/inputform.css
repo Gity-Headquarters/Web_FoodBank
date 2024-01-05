@@ -1,8 +1,3 @@
-.form-input-login input::placeholder {
-    margin: 90px;
-}
-
-
 .form-input-login input {
     width: 100%;
     padding: 1rem;

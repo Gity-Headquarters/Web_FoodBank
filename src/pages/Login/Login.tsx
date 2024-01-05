@@ -53,22 +53,20 @@ function Login() {
     // };
 
     return (
-        <section className="login" id='login'>
-            <div className="container d-grid justify-content-center align-items-center">
-                <div className="card_login p-5 rounded-4">
-                    <div className="card-icon">
-                        <div className="d-flex justify-content-center mb-2">
-                            <img src={iconFoodbank2} alt="icons-login" />
-                        </div>
-                        <h1 className='text-center'>Food Bank</h1>
+        <section className="login d-flex p-3 justify-content-center align-items-center" id='login'>
+            <div className="card_login p-3 p-md-5 rounded-4">
+                <div className="card-icon">
+                    <div className="d-flex justify-content-center mb-2">
+                        <img src={iconFoodbank2} alt="icons-login" />
                     </div>
-                    <form>
-                        <InputForm htmlFor="email" onChange={handleChange} type="email" value={formData.email} placeholder="Masukkan Email" />
-                        <InputForm htmlFor="password" onChange={handleChange} type="password" value={formData.password} placeholder="Masukkan Password" />
-                        {/* <p className={` text danger`} > Incorect Email or Password</p> */}
-                        <button disabled={disabled} className={`btn ${buttonLogin ? 'btn-login' : 'btn-secondary text-white-50'} w-100 fw-semibold fs-5 mt-5`} >Masuk</button>
-                    </form>
+                    <h1 className='text-center'>Food Bank</h1>
                 </div>
+                <form>
+                    <InputForm htmlFor="email" onChange={handleChange} type="email" value={formData.email} placeholder="Masukkan Email" />
+                    <InputForm htmlFor="password" onChange={handleChange} type="password" value={formData.password} placeholder="Masukkan Password" />
+                    {/* <p className={` text danger`} > Incorect Email or Password</p> */}
+                    <button disabled={disabled} className={`btn ${buttonLogin ? 'btn-login' : 'btn-secondary text-white-50'} w-100 fw-semibold fs-5 mt-5`} >Masuk</button>
+                </form>
             </div>
         </section>
     )

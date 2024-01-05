@@ -1,29 +1,29 @@
-#login .container {
+#login {
     min-height: 100vh;
     font-family: 'Inter', sans-serif;
 }
 
-.login .container .card_login img {
+.login .card_login img {
     height: 100px;
     width: 100px;
 }
 
-.login .container .card_login {
+.login .card_login {
     background-color: #f1faee;
-    width: 600px;
+    width: 37rem;
 }
 
-.login .container .card_login .text-center h1 {
+.login .card_login .text-center h1 {
     font-weight: 700;
 }
 
-.login .container .card_login .card-icon h1 {
+.login .card_login .card-icon h1 {
     font-size: 27px;
     color: #FF7F0A;
     font-weight: 600;
 }
 
-.login .container .card_login form .btn-login {
+.login .card_login form .btn-login {
     background-color: #FF7F0A;
     color: #FFF;
 }
