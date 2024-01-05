@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './login.css'
 import { iconFoodbank2 } from '../../image'
-import InputForm from '../../components/Elements/inputForm/InputForm'
+import InputForm from '../../components/Elements/InputForm/InputForm'
 import { login } from '../../service/Authentication'
 // import { login } from '../../service/Authentication'
 
