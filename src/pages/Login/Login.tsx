@@ -9,7 +9,9 @@ import { login } from '../../service/Authentication'
 function Login() {
 
     type LoginResponse = {
-        data: string;
+        data: {
+            token: string
+        }
         meta: {
             status: string;
         };
@@ -49,11 +51,9 @@ function Login() {
         e.preventDefault();
         login(formData, (status: boolean, res: LoginResponse) => {
             if (status) {
-                alert('login success');
                 console.log(res.data);
-
+                localStorage.setItem("token", res.data.token);
             } else {
-                alert('login failed');
                 console.log(res);
                 setErrorMsg("d-block")
             }
