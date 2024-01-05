@@ -19,11 +19,11 @@
 
 .login .container .card_login .card-icon h1 {
     font-size: 27px;
-    color: #FFB800;
+    color: #FF7F0A;
     font-weight: 600;
 }
 
-.login .container .card_login form button {
+.login .container .card_login form .btn-login {
     background-color: #FF7F0A;
     color: #FFF;
 }

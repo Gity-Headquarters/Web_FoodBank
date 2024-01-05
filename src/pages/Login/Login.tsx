@@ -5,16 +5,36 @@ import InputForm from '../../components/Elements/inputForm/InputForm'
 // import { login } from '../../service/Authentication'
 function Login() {
 
-    // const [errorMsg, setErrorMsg] = useState("d-none")
+    const [errorMsg, setErrorMsg] = useState("d-none")
+    const [buttonLogin, setButtonLogin] = useState(false)
+    const [disabled, setDisabled] = useState(true)
+
     const [formData, setFormData] = useState({
         email: "",
         password: "",
     })
 
+
     const handleChange = (e: any) => {
         const { name, value, } = e.target;
         setFormData({ ...formData, [name]: value });
+
+        const updatedValues = {
+            ...formData,
+            [name]: value,
+        };
+
+        if (updatedValues.email !== "" && updatedValues.password !== "" && updatedValues.email.includes('@gmail.com')) {
+            setButtonLogin(true);
+            setDisabled(false);
+        } else {
+            setButtonLogin(false);
+            setDisabled(true);
+        }
     }
+
+
+
     // const formLogin = JSON.stringify(formData);
     console.log(formData);
 
@@ -45,10 +65,10 @@ function Login() {
                         <h1 className='text-center'>Food Bank</h1>
                     </div>
                     <form>
-                        <InputForm htmlFor="email" title="Email address" onChange={handleChange} type="email" value={formData.email} placeholder="Enter email" />
-                        <InputForm htmlFor="password" title="Password" onChange={handleChange} type="password" value={formData.password} placeholder="Password" />
-                        <p className={` text danger `} > Incorect Email or Password</p>
-                        <button className='btn w-100 fw-semibold fs-5 mt-5' >Login</button>
+                        <InputForm htmlFor="email" onChange={handleChange} type="email" value={formData.email} placeholder="Masukkan Email" />
+                        <InputForm htmlFor="password" onChange={handleChange} type="password" value={formData.password} placeholder="Masukkan Password" />
+                        <p className={` text danger ${errorMsg}`} > Incorect Email or Password</p>
+                        <button disabled={disabled} className={`btn ${buttonLogin ? 'btn-login' : 'btn-secondary text-white-50'} w-100 fw-semibold fs-5 mt-5`} >Masuk</button>
                     </form>
                 </div>
             </div>
