@@ -53,13 +53,13 @@
 }
 
 .sidebar .menu .sidebar-link:hover {
-    color: #0085ff;
+    color: #FBEEDC;
     background-color: #ebf5ff;
 }
 
 .sidebar .menu .sidebar-link.active {
-    background-color: #0085ff;
-    color: white;
+    background-color: #FBEEDC;
+    color: #FF7F0A;
     border-radius: 12px;
 }
 

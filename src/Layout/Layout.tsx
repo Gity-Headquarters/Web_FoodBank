@@ -1,6 +1,6 @@
 import { logoSidebar } from "../image"
 import SidebarItem from "../components/Elements/SideBarList/SidebarList"
-import { DashCircle } from "react-bootstrap-icons"
+import { BsGrid } from "react-icons/bs";
 import './layout.css'
 
 function Layout({ children }: any) {
@@ -14,7 +14,7 @@ function Layout({ children }: any) {
                     <div className="offcanvass-body d-grid  align-items-start">
                         <ul className="menu d-grid justify-content-center align-items-center mx-auto p-0 ">
                             <SidebarItem
-                                icon={<DashCircle />}
+                                icon={<BsGrid />}
                                 title="Dashboard"
                                 location="/dashboard"
                             />
