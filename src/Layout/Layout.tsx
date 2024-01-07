@@ -1,6 +1,9 @@
 import { logoSidebar } from "../image"
 import SidebarItem from "../components/Elements/SideBarList/SidebarList"
 import { BsGrid } from "react-icons/bs";
+import {
+    LuWallet,
+} from "react-icons/lu";
 import './layout.css'
 
 function Layout({ children }: any) {
@@ -17,6 +20,11 @@ function Layout({ children }: any) {
                                 icon={<BsGrid />}
                                 title="Dashboard"
                                 location="/dashboard"
+                            />
+                            <SidebarItem
+                                icon={<LuWallet />}
+                                title="Dana Admin"
+                                location="/dana-admin"
                             />
                         </ul>
                     </div>
