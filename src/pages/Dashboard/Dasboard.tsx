@@ -1,11 +1,12 @@
 import Layout from "../../Layout/Layout"
+import TitlePage from "../../components/Elements/TitlePage/TitlePage"
 
 
 function Dasboard() {
     return (
         <Layout>
-            <section className=" bg-primary" >
-                <h1>Dashboard</h1>
+            <section className="dashboard " >
+                <TitlePage title="Dashboard" />
             </section>
         </Layout>
     )
