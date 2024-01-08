@@ -8,7 +8,7 @@ type Props = {
 
 function CardLink({ location, clasName, children }: Props) {
     return (
-        <div className={`card card-link ${clasName}`}>
+        <div className={`card card-link border-0 ${clasName}`}>
             <Link to={location}>
                 {children}
             </Link>
