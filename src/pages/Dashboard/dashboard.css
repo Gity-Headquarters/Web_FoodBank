@@ -10,3 +10,9 @@
 /* #dashboard .statistic-menu .row .col .card-link .p-3 .d-flex {
     gap: 100px;
 } */
+
+@media screen and (max-width: 767px) {
+    #dashboard .statistic-chart .row .chart-2 {
+        margin-top: 28px;
+    }
+}

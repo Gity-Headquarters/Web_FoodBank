@@ -226,7 +226,7 @@ function Dasboard() {
 
                         </div>
 
-                        <div className="col-md-3 col-12 ">
+                        <div className="col-md-3 col-12 chart-2">
 
                             <Card className="p-3" >
                                 <canvas ref={donutChartRef} height="335"></canvas>
