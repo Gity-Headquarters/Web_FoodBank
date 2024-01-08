@@ -2,7 +2,7 @@ import { peopleIcon } from "../image";
 
 export const CardDashboard = [
     {
-        title: 'Pengguna Aktif',
+        title: 'Total Pengguna',
         total: '1,784',
         icon: peopleIcon,
         percentase: 10,

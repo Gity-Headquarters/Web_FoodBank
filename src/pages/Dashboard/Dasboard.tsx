@@ -43,9 +43,9 @@ function Dasboard() {
                     ],
                     datasets: [
                         {
-                            label: "Pengguna Aktif",
+                            label: "Total Pengguna",
                             data: [10, 17, 30, 15, 20, 25, 33, 10, 20, 20],
-                            borderColor: "blue",
+                            borderColor: "#883DCF",
                             borderWidth: 2,
                         },
                         {
@@ -53,8 +53,9 @@ function Dasboard() {
                             data: [
                                 5, 15, 25, 33, 34, 12, 67, 33, 12, 10, 40, 50, 20, 40, 30,
                             ],
-                            borderColor: "red",
+                            borderColor: "#F86624",
                             borderWidth: 2,
+
                         },
                     ],
                 },
@@ -78,16 +79,37 @@ function Dasboard() {
                                 generateLabels: function (chart: any) {
                                     const labels = Chart.defaults.plugins.legend.labels.generateLabels(chart);
                                     labels.forEach((label: any) => {
-                                        if (label.text === "Pengguna Aktif") {
-                                            label.fillStyle = "blue";
+                                        if (label.text === "Total Pengguna") {
+                                            label.fillStyle = "#883DCF";
                                         } else if (label.text === "Posko") {
-                                            label.fillStyle = "red";
+                                            label.fillStyle = "#F86624";
                                         }
                                     });
                                     return labels;
                                 },
+
                             },
                         },
+                        title: {
+                            display: true,
+                            text: "Statistik ",
+                            font: {
+                                size: 20,
+                            },
+                            color: "black",
+                            position: "top",
+                            align: "start",
+                            padding: 20
+                        },
+                        subtitle: {
+                            display: true,
+                            text: "Dari Pengguna dan Posko",
+                            font: {
+                                size: 14
+                            },
+                            align: "start",
+
+                        }
                     },
                 },
             });
@@ -100,6 +122,13 @@ function Dasboard() {
                 donutChartInstanceRef.current.destroy();
             }
 
+            // Data Posko
+            const poskoData = [5, 15, 25, 33, 34, 12, 67, 33, 12, 10, 40, 50, 20, 40, 30];
+            const totalPosko = poskoData.reduce((acc, value) => acc + value, 0);
+
+            // Pengguna Aktif
+            const penggunaAktif = 100 - totalPosko;
+
             // Create new donut chart instance
             donutChartInstanceRef.current = new Chart(donutCtx, {
                 type: "doughnut",
@@ -107,17 +136,8 @@ function Dasboard() {
                     labels: ["Pengguna Aktif", "Posko"],
                     datasets: [
                         {
-                            data: [
-                                [10, 17, 30, 15, 20, 25, 33, 10, 20, 20].reduce(
-                                    (acc, value) => acc + value,
-                                    0
-                                ),
-                                [5, 15, 25, 33, 34, 12, 67, 33, 12, 10, 40, 50, 20, 40, 30].reduce(
-                                    (acc, value) => acc + value,
-                                    0
-                                ),
-                            ],
-                            backgroundColor: ["blue", "red"],
+                            data: [penggunaAktif, totalPosko],
+                            backgroundColor: ["#883DCF", "#F86624"],
                             borderWidth: 2,
                         },
                     ],
@@ -127,27 +147,49 @@ function Dasboard() {
                     maintainAspectRatio: false,
                     plugins: {
                         legend: {
-                            position: "top",
+                            position: "bottom",
                             align: "end",
                             labels: {
                                 usePointStyle: true,
-                                generateLabels: function (chart: any) {
+                                generateLabels: function (chart) {
                                     const labels = Chart.defaults.plugins.legend.labels.generateLabels(chart);
-                                    labels.forEach((label: any) => {
+                                    labels.forEach((label) => {
                                         if (label.text === "Pengguna Aktif") {
-                                            label.fillStyle = "blue";
+                                            label.fillStyle = "#883DCF";
                                         } else if (label.text === "Posko") {
-                                            label.fillStyle = "red";
+                                            label.fillStyle = "#F86624";
                                         }
                                     });
                                     return labels;
                                 },
                             },
                         },
+                        title: {
+                            display: true,
+                            text: "Pelaporan",
+                            font: {
+                                size: 16,
+                            },
+                            color: "black",
+                            position: "top",
+                            align: "start",
+                            padding: 20
+                        },
+
+                        subtitle: {
+                            display: true,
+                            text: "Donatur & Pengambilan Makanan  ",
+                            font: {
+                                size: 14
+                            },
+                            align: "start",
+
+                        }
                     },
                 },
             });
         }
+
     }, []);
 
 
@@ -178,15 +220,16 @@ function Dasboard() {
                 <section className="statistic-chart mt-4    " >
                     <div className="row">
                         <div className="col-md-9 col-12">
-                            <Card>
+                            <Card className="p-3" >
                                 <canvas ref={chartRef} height="100"></canvas>
                             </Card>
 
                         </div>
 
                         <div className="col-md-3 col-12 ">
-                            <Card >
-                                <canvas ref={donutChartRef} height="315"></canvas>
+
+                            <Card className="p-3" >
+                                <canvas ref={donutChartRef} height="335"></canvas>
                             </Card>
                         </div>
 
