@@ -1,11 +1,12 @@
 import './buttonConfirm.css'
 type Props = {
-    title: string
+    title: string,
+    className?: string
 }
 
-function ButtonConfirm({ title }: Props): JSX.Element {
+function ButtonConfirm({ title, className }: Props): JSX.Element {
     return (
-        <button className='btn btn-confirm' >{title} </button>
+        <button className={`btn btn-confirm ${className}`} >{title} </button>
     )
 }
 

@@ -2,3 +2,8 @@
     background-color: #FF7F0A;
     color: #FFFF;
 }
+
+.btn-confirm:hover {
+    background-color: #FFFF;
+    color: #FF7F0A;
+}
