@@ -1,0 +1,7 @@
+.transaction .card-normal {
+    height: 140px;
+}
+
+.transaction .card-normal h3 {
+    color: var(--green);
+}
