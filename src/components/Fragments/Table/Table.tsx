@@ -33,7 +33,7 @@ function Table({ value, children, selectionMode, dataKey, selection, onSelection
             filters={filters}
             globalFilterFields={globalFilterFields}
             rowsPerPageOptions={[8, 10, 25, 50]}
-            tableStyle={{ minWidth: "50rem", minHeight: "55vh", maxHeight: "55vh" }}
+            tableStyle={{ minWidth: "50rem", minHeight: "50vh", maxHeight: "55vh" }}
             className="table-customers"
         >
             {children}

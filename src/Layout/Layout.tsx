@@ -4,7 +4,10 @@ import { BsGrid } from "react-icons/bs";
 import {
     LuWallet,
 } from "react-icons/lu";
+import { MdNoFood } from "react-icons/md";
+import { MdManageHistory } from "react-icons/md";
 import './layout.css'
+import ButtonCancel from "../components/Elements/ButtonCancel/ButtonCancel";
 
 function Layout({ children }: any) {
     return (
@@ -26,6 +29,19 @@ function Layout({ children }: any) {
                                 title="Dana Admin"
                                 location="/dana-admin"
                             />
+                            <hr />
+                            <SidebarItem
+                                icon={<MdNoFood />}
+                                title="Total Posko"
+                                location="/total-posko"
+                            />
+                            <SidebarItem
+                                icon={<MdManageHistory />}
+                                title="Manage Posko"
+                                location="/Manage-posko"
+                            />
+                            <hr />
+                            <ButtonCancel title="Logout" />
                         </ul>
                     </div>
                 </div>
