@@ -1,4 +1,4 @@
-import { logoSidebar } from "../image"
+import { logoLogin, logoSidebar } from "../image"
 import SidebarItem from "../components/Elements/SideBarList/SidebarList"
 import { BsGrid } from "react-icons/bs";
 import {
@@ -8,6 +8,7 @@ import { MdNoFood } from "react-icons/md";
 import { MdManageHistory } from "react-icons/md";
 import './layout.css'
 import ButtonCancel from "../components/Elements/ButtonCancel/ButtonCancel";
+import { FaArrowCircleLeft } from "react-icons/fa";
 
 function Layout({ children }: any) {
     return (
@@ -15,7 +16,8 @@ function Layout({ children }: any) {
             <div className="sidebar">
                 <div className="offcanvass offcanvas-start ">
                     <div className="offcanvas-header d-flex justify-content-center">
-                        <img src={logoSidebar} alt="" />
+                        <img src={logoSidebar} alt="logo-sidebar" />
+                        <img src={logoLogin} alt="logo-logins" />
                     </div>
                     <div className="offcanvass-body d-grid  align-items-start">
                         <ul className="menu d-grid justify-content-center align-items-center mx-auto p-0 ">
@@ -41,7 +43,10 @@ function Layout({ children }: any) {
                                 location="/Manage-posko"
                             />
                             <hr />
-                            <ButtonCancel title="Logout" className="btn-logout" />
+                            <ButtonCancel className="btn-logout d-flex justify-content-center">
+                                <FaArrowCircleLeft />
+                                <span className="fw-medium" >Logout</span>
+                            </ButtonCancel>
                         </ul>
                     </div>
                 </div>

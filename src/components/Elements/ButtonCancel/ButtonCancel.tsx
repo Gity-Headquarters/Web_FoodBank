@@ -1,12 +1,12 @@
 import './buttonCancel.css'
 type Props = {
-    title: string,
     className?: string
+    children?: any
 }
 
-function ButtonCancel({ title, className }: Props): JSX.Element {
+function ButtonCancel({ children, className }: Props): JSX.Element {
     return (
-        <button className={`btn btn-cancel ${className}`} > {title} </button>
+        <button className={`btn btn-cancel ${className}`} > {children} </button>
     )
 }
 

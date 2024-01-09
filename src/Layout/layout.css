@@ -145,6 +145,10 @@ main .navbar .fw-semibold {
     color: #FFFF;
 }
 
+.sidebar .offcanvass-body ul .btn-logout svg {
+    display: none;
+}
+
 @media screen and (min-width: 1400px) {
     main {
         min-height: 100vh;
@@ -201,6 +205,16 @@ main .navbar .fw-semibold {
     .sidebar .offcanvass .offcanvas-header img:nth-child(1) {
         display: none;
     }
+
+    .sidebar .offcanvass-body ul .btn-logout svg {
+        display: block;
+
+    }
+
+    .sidebar .offcanvass-body ul .btn-logout span {
+        display: none;
+    }
+
 }
 
 @media screen and (max-width: 600px) {
