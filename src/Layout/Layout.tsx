@@ -47,7 +47,7 @@ function Layout({ children }: any) {
                 </div>
             </div>
 
-            <main  >
+            <main>
                 {children}
             </main>
         </>
