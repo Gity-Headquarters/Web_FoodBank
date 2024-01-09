@@ -32,7 +32,7 @@ function DanaAdmin() {
                     <Card className="p-4" >
                         <div className="d-flex justify-content-between my-auto">
                             <div className="text-start d-flex flex-column align-items-start my-auto">
-                                <span className="text-secondary fw-medium" >Total Posko</span>
+                                <span className="text-secondary fw-medium" >Jumlah Transaksi</span>
                                 <h3 className="fw-semibold " >Rp 200,000</h3>
                             </div>
                             <img className="mb-5" src={wallet1} alt="walet1" />
