@@ -19,6 +19,9 @@ function DanaAdmin() {
         setBgTransaction(transactionType);
     };
 
+    const handleSearch = (e: any) => {
+        setSearchData(e.target.value);
+    };
 
     return (
         <Layout>
@@ -55,7 +58,8 @@ function DanaAdmin() {
                                 <Search
                                     size={20}
                                     placeholder={"Search"}
-                                    value={''}
+                                    value={searchData}
+                                    onChange={handleSearch}
                                 />
                             </div>
                         </div>

@@ -25,3 +25,48 @@
     border-bottom: 2px solid var(--orange);
     color: var(--orange);
 }
+
+
+@media screen and (max-width: 1070px) {
+
+    .filtering-data-chart h4 {
+        font-size: 16px;
+        line-height: 0;
+    }
+
+    .d-flex .search-container .input-search {
+        width: 100% !important;
+    }
+
+    .d-flex .search-container {
+        margin-bottom: 20px;
+    }
+
+
+    .filtering-data-chart {
+        justify-content: center;
+    }
+
+}
+
+
+@media screen and (max-width: 784px) {
+    .filtering-data-chart h4 {
+        font-size: 14px;
+        line-height: 0;
+    }
+
+    .card .p-datatable-wrapper table thead tr th {
+        font-size: 14px
+    }
+
+
+}
+
+@media screen and (max-width: 392px) {
+    .filtering-data-chart h4 {
+        font-size: 12px;
+        line-height: 0;
+        margin-bottom: 0px;
+    }
+}

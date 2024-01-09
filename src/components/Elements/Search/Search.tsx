@@ -5,16 +5,17 @@ type Props = {
     size: number,
     value: string,
     placeholder: string,
+    onChange: any
 
 }
 
-function Search({ className, size, value, placeholder, }: Props) {
+function Search({ className, size, value, placeholder, onChange }: Props) {
     return (
         <>
             <button className={`search__button  ${className}`}>
                 <LuSearch size={size} />
             </button>
-            <input type="text" className="form-control input-search shadow-none" placeholder={placeholder} value={value} />
+            <input type="text" className="form-control input-search shadow-none" placeholder={placeholder} value={value} onChange={onChange} />
         </>
     )
 }
