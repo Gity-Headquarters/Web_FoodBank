@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import Layout from "../../Layout/Layout"
 import Card from "../../components/Elements/Card/Card"
 import ColumnTable from "../../components/Elements/ColumTable/ColumnTable"
@@ -5,128 +6,13 @@ import TitlePage from "../../components/Elements/TitlePage/TitlePage"
 import Table from "../../components/Fragments/Table/Table"
 import { wallet1 } from "../../image"
 import './danaAdmin.css'
-
-const columnTable = [
-    {
-        field: "patient_name",
-        header: "Name",
-    },
-    {
-        field: "transaction_id",
-        header: "ID Transaksi",
-    },
-    {
-        field: "price_counseling",
-        header: "Harga",
-    },
-    {
-        field: "payment_status",
-        header: "Status Pembayaran",
-    },
-
-];
+import { columnTable, data } from "../../utils/DataObject"
 
 
-const data = [
-    {
-        patient_name: "Abdul",
-        transaction_id: "123456789",
-        price_counseling: "Rp 100.000",
-        payment_status: "Lunas",
-    },
-    {
-        patient_name: "Abdul",
-        transaction_id: "123456789",
-        price_counseling: "Rp 100.000",
-        payment_status: "Lunas",
-    },
-    {
-        patient_name: "Abdul",
-        transaction_id: "123456789",
-        price_counseling: "Rp 100.000",
-        payment_status: "Lunas",
-    },
-    {
-        patient_name: "Abdul",
-        transaction_id: "123456789",
-        price_counseling: "Rp 100.000",
-        payment_status: "Lunas",
-    },
-    {
-        patient_name: "Abdul",
-        transaction_id: "123456789",
-        price_counseling: "Rp 100.000",
-        payment_status: "Lunas",
-    },
-    {
-        patient_name: "Abdul",
-        transaction_id: "123456789",
-        price_counseling: "Rp 100.000",
-        payment_status: "Lunas",
-    },
-    {
-        patient_name: "Abdul",
-        transaction_id: "123456789",
-        price_counseling: "Rp 100.000",
-        payment_status: "Lunas",
-    },
-    {
-        patient_name: "Abdul",
-        transaction_id: "123456789",
-        price_counseling: "Rp 100.000",
-        payment_status: "Lunas",
-    },
-    {
-        patient_name: "Abdul",
-        transaction_id: "123456789",
-        price_counseling: "Rp 100.000",
-        payment_status: "Lunas",
-    },
-    {
-        patient_name: "Abdul",
-        transaction_id: "123456789",
-        price_counseling: "Rp 100.000",
-        payment_status: "Lunas",
-    },
-    {
-        patient_name: "Abdul",
-        transaction_id: "123456789",
-        price_counseling: "Rp 100.000",
-        payment_status: "Lunas",
-    },
-    {
-        patient_name: "Abdul",
-        transaction_id: "123456789",
-        price_counseling: "Rp 100.000",
-        payment_status: "Lunas",
-    },
-    {
-        patient_name: "Abdul",
-        transaction_id: "123456789",
-        price_counseling: "Rp 100.000",
-        payment_status: "Lunas",
-    },
-    {
-        patient_name: "Abdul",
-        transaction_id: "123456789",
-        price_counseling: "Rp 100.000",
-        payment_status: "Lunas",
-    },
-    {
-        patient_name: "Abdul",
-        transaction_id: "123456789",
-        price_counseling: "Rp 100.000",
-        payment_status: "Lunas",
-    },
-    {
-        patient_name: "Abdul",
-        transaction_id: "123456789",
-        price_counseling: "Rp 100.000",
-        payment_status: "Lunas",
-    },
-]
 
 function DanaAdmin() {
+
+
     return (
         <Layout>
             <section className="dana-admin" id="dana-admin">
@@ -148,7 +34,7 @@ function DanaAdmin() {
                     <Card className="p-5 " >
                         <Table value={data} >
                             {columnTable.map((item, index) => (
-                                <ColumnTable key={index} field={item.field} header={item.header} />
+                                <ColumnTable key={index} field={item.field} header={item.header} body={item.body} />
                             ))}
                         </Table>
                     </Card>

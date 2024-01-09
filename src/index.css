@@ -13,6 +13,25 @@ font-family: 'Inter', sans-serif;
 
 */
 
+.table-customers {
+    font-family: 'Inter', sans-serif;
+}
+
+.p-paginator-page {
+    border-radius: 100%;
+}
+
+.p-inputwrapper {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.table-customers thead tr th .p-column-header-content {
+    padding: 20px !important;
+}
 
 :root {
     --secondary: #777980;
