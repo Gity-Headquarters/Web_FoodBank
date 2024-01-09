@@ -5,3 +5,16 @@
 .transaction .card-normal h3 {
     color: var(--green);
 }
+
+
+.p-paginator-page {
+    border-radius: 100%;
+}
+
+.p-inputwrapper {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6px;
+}
