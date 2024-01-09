@@ -41,7 +41,7 @@ function Layout({ children }: any) {
                                 location="/Manage-posko"
                             />
                             <hr />
-                            <ButtonCancel title="Logout" />
+                            <ButtonCancel title="Logout" className="btn-logout" />
                         </ul>
                     </div>
                 </div>

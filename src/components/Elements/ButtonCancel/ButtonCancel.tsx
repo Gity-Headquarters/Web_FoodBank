@@ -6,7 +6,7 @@ type Props = {
 
 function ButtonCancel({ title, className }: Props): JSX.Element {
     return (
-        <button className={`btn btn-cancel ${className}`} >{title} </button>
+        <button className={`btn btn-cancel ${className}`} > {title} </button>
     )
 }
 
