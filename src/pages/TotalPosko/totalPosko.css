@@ -1,3 +1,20 @@
 .total-posko .hero-total-posko .d-flex h3 {
     font-size: 52px;
 }
+
+.data-posko .p-datatable-wrapper table tbody .changeItemStatusTersedia {
+    padding: 6px 24px;
+    background-color: #D4F1DD;
+    color: #1B7A37;
+    border-radius: 9px;
+}
+
+.data-posko .p-datatable-wrapper table tbody .changeItemStatusTutup {
+    padding: 6px 16px;
+    background-color: #FFDFD7;
+    color: #AA3E24;
+    border-radius: 9px;
+    width: 118px;
+    text-align: center;
+
+}

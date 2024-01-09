@@ -17,7 +17,7 @@ import { DataTable } from "primereact/datatable";
 
 // }
 
-function Table({ value, children, selectionMode, dataKey, selection, onSelectionChange, onRowSelect, onRowUnselect, filters, globalFilterFields, emptyMessage, header }: any) {
+function Table({ value, children, selectionMode, dataKey, selection, onSelectionChange, onRowSelect, onRowUnselect, filters, globalFilterFields, emptyMessage, header, className = 'table-customers' }: any) {
     return (
         <DataTable
             header={header}
@@ -34,7 +34,7 @@ function Table({ value, children, selectionMode, dataKey, selection, onSelection
             globalFilterFields={globalFilterFields}
             rowsPerPageOptions={[8, 10, 25, 50]}
             tableStyle={{ minWidth: "50rem", minHeight: "50vh", maxHeight: "55vh" }}
-            className="table-customers"
+            className={className}
         >
             {children}
         </DataTable>

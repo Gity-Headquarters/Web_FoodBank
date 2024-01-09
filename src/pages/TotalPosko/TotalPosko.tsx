@@ -1,11 +1,26 @@
+import { useState } from "react"
 import Layout from "../../Layout/Layout"
 import Card from "../../components/Elements/Card/Card"
+import ColumnTable from "../../components/Elements/ColumTable/ColumnTable"
+import Search from "../../components/Elements/Search/Search"
 import TitlePage from "../../components/Elements/TitlePage/TitlePage"
+import Table from "../../components/Fragments/Table/Table"
 import { wallet1 } from "../../image"
+import { columnTablePosko, dataPosko } from "../../utils/DataObject"
 import './totalPosko.css'
 
 
 const TotalPosko = () => {
+    const [bgTransaction, setBgTransaction] = useState("allBooths");
+    const [searchData, setSearchData] = useState("");
+
+    const handleClick = (transactionType: string) => {
+        setBgTransaction(transactionType);
+    };
+
+    const handleSearch = (e: any) => {
+        setSearchData(e.target.value);
+    };
     return (
         <Layout>
             <section className="total-posko" id="total-posko">
@@ -21,6 +36,38 @@ const TotalPosko = () => {
                         </div>
                     </Card>
                 </section>
+
+                <section className="data-posko mt-4 mb-4">
+                    <Card className="p-3" >
+                        <div className="d-flex row row-cols-lg-2 row-cols-1 justify-content-between">
+                            <div className="d-flex gap-4 mb-3">
+                                <div className="col d-flex filtering-data-chart ">
+                                    <h4 className={`px-2 ${bgTransaction === "allBooths" ? "active" : ""}`} onClick={() => { handleClick("allBooths"); }} >
+                                        Semua Transaksi
+                                    </h4>
+
+                                    <h4 className={bgTransaction === "newBooth" ? "active" : ""} onClick={() => { handleClick("newBooth"); }} >
+                                        Transaki Terbaru
+                                    </h4>
+                                </div>
+                            </div>
+                            <div className="col gap-2 search-container d-flex justify-content-end">
+                                <Search
+                                    size={20}
+                                    placeholder={"Search"}
+                                    value={searchData}
+                                    onChange={handleSearch}
+                                />
+                            </div>
+                        </div>
+                        <Table value={dataPosko}  >
+                            {columnTablePosko.map((item, index) => (
+                                <ColumnTable key={index} field={item.field} header={item.header} body={item.body} />
+                            ))}
+                        </Table>
+                    </Card>
+                </section>
+
             </section>
         </Layout>
     )
