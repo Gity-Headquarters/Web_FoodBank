@@ -7,8 +7,12 @@ import human1 from './assets/human1.svg'
 import human2 from './assets/human2.svg'
 import human3 from './assets/human3.svg'
 import human4 from './assets/human4.svg'
+import poskoImage from './assets/poskoImage.svg'
+import iconFood from './assets/iconFood.svg'
+import iconMap from './assets/iconMap.svg'
+import iconWatch from './assets/iconWatch.svg'
 
 
 export {
-    logoLogin, logoSidebar, welcomeAdmin, peopleIcon, wallet1, human1, human2, human3, human4
+    logoLogin, logoSidebar, welcomeAdmin, peopleIcon, wallet1, human1, human2, human3, human4, poskoImage, iconFood, iconMap, iconWatch
 }
