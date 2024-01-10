@@ -183,7 +183,7 @@ function Dasboard() {
                 <TitlePage title="Dashboard" />
                 <section className="welcome-card">
                     <Card>
-                        <div className=" row d-flex justify-content-start align-items-center px-5 py-4">
+                        <div className=" row d-flex justify-content-start align-items-center px-3 px-md-5 py-4">
                             <div className="col-12 col-sm-7 text-start ">
                                 <h2 className="fw-semibold" >Selamat Datang Kembali, Admin!</h2>
                                 <span className="text-secondary" >Senang melihat Anda kembali. Mari kita mulai hari ini dengan mengelola situs ini.</span>
