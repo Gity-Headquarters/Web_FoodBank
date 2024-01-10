@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { human1, human2, human3, human4, peopleIcon } from "../image";
+import { human1, human2, human3, human4, peopleIcon, poskoImage } from "../image";
 
 export const CardDashboard = [
     {
@@ -259,36 +259,42 @@ export const managePoskoList = [
         title: 'Food Bank Booth',
         totalFoods: 400,
         location: 'Dago, Bandung, Indonesia',
-        time: '12:00 PM'
+        time: '12:00 PM',
+        image: poskoImage
     },
     {
         title: 'Food Bank Booth',
         totalFoods: 400,
         location: 'Dago, Bandung, Indonesia cek teks panjang',
-        time: '12:00 PM'
+        time: '12:00 PM',
+        image: poskoImage
     },
     {
         title: 'Food Bank Booth',
         totalFoods: 400,
         location: 'Dago, Bandung, Indonesia',
-        time: '12:00 PM'
+        time: '12:00 PM',
+        image: poskoImage
     },
     {
         title: 'Food Bank Booth',
         totalFoods: 400,
         location: 'Dago, Bandung, Indonesia',
-        time: '12:00 PM'
+        time: '12:00 PM',
+        image: poskoImage
     },
     {
         title: 'Food Bank Booth',
         totalFoods: 400,
         location: 'Dago, Bandung, Indonesia cek teks panjang',
-        time: '12:00 PM'
+        time: '12:00 PM',
+        image: poskoImage
     },
     {
         title: 'Food Bank Booth',
         totalFoods: 400,
         location: 'Dago, Bandung, Indonesia',
-        time: '12:00 PM'
+        time: '12:00 PM',
+        image: poskoImage
     },
 ]

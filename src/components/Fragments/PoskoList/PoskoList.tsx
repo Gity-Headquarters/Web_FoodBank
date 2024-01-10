@@ -6,17 +6,18 @@ type Props = {
     title: string,
     totalFoods?: number,
     location: string,
-    time: string
+    time: string,
+    image: string
 }
 
-function PoskoList({ title, totalFoods, location, time }: Props) {
+function PoskoList({ title, totalFoods, location, time, image }: Props) {
     const maxLength = 24
     const shortText = location.length > maxLength ? location.slice(0, maxLength) + "..." : location
     return (
         <div className="col-12 col-md-6 col-lg-3 p-2 ">
             <Card >
                 <div className="body-card">
-                    <img src={poskoImage} alt="image posko" />
+                    <img src={image} alt="image posko" />
                     <div className="information p-3 p-sm-2    p-xl-3">
                         <h3 className="fw-bold mb-3" >{title}</h3>
                         <div className="food d-flex align-items-center">

@@ -35,7 +35,7 @@ function ManagePosko() {
                 <section className="list-posko mt-4 mb-4" >
                     <div className="row">
                         {managePoskoList.map((item, index) => (
-                            <PoskoList title={item.title} location={item.location} time={item.time} key={index} totalFoods={item.totalFoods} />
+                            <PoskoList title={item.title} location={item.location} time={item.time} key={index} totalFoods={item.totalFoods} image={item.image} />
                         ))}
                     </div>
                 </section>
