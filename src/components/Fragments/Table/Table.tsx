@@ -26,7 +26,7 @@ function Table({ value, children, filters, globalFilterFields, emptyMessage, hea
             emptyMessage={emptyMessage}
             filters={filters}
             globalFilterFields={globalFilterFields}
-            rowsPerPageOptions={[5, 10, 25]}
+            rowsPerPageOptions={[5, 10, 25, 50]}
             tableStyle={{ minWidth: "50rem", minHeight: "50vh", }}
             className={className}
         >

@@ -143,7 +143,7 @@ const styleStatusPosko = (rowData: any) => {
     return (
         <>
             <div style={{ display: "flex", alignItems: "center" }}>
-                <div className={`my-1 ${changeItemStatus}`}>{rowData.status}</div>
+                <div className={`my-3 ${changeItemStatus}`}>{rowData.status}</div>
             </div>
         </>
     );
