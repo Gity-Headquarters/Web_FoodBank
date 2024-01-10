@@ -1,5 +1,4 @@
 import './inputform.css'
-// why its error
 
 type Props = {
     htmlFor: string
