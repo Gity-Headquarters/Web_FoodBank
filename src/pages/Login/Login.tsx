@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './login.css'
 import { logoLogin } from '../../image'
-import InputForm from '../../components/Elements/inputForm/InputForm'
+import InputForm from '../../components/Elements/InputForm/InputForm'
 // why its error vercel
 import { login } from '../../service/Authentication'
 // import { login } from '../../service/Authentication'
