@@ -24,10 +24,49 @@
     width: 30px;
 }
 
-/* .manage-posko .list-posko .row .col-12 .body-card .information .time button svg{
-    width: 20px;
-} */
+.manage-posko .list-posko .row .col-12 .body-card .information .time button svg {
+    height: 35px;
+    width: 35px;
+}
 
-/* .manage-posko .list-posko .row .col-12 .body-card .information .food .text-secondary {
-    font-size: 16px;
-} */
+@media screen and (max-width: 1449px) {
+    .manage-posko .list-posko .row .col-12 .body-card .information h3 {
+        font-size: 19px;
+    }
+
+    .manage-posko .list-posko .row .col-12 .body-card .information .food span,
+    .manage-posko .list-posko .row .col-12 .body-card .information .map span,
+    .manage-posko .list-posko .row .col-12 .body-card .information .time span {
+        font-size: 14px;
+    }
+
+    .manage-posko .list-posko .row .col-12 .body-card .information .food img,
+    .manage-posko .list-posko .row .col-12 .body-card .information .map img,
+    .manage-posko .list-posko .row .col-12 .body-card .information .time img {
+        height: 20px;
+        width: 20px;
+    }
+
+    .manage-posko .list-posko .row .col-12 .body-card .information .time button svg {
+        height: 20px;
+        width: 20px;
+    }
+}
+
+@media screen and (max-width: 1274px) {
+
+    .manage-posko .list-posko .row .col-12 .body-card .information .food span,
+    .manage-posko .list-posko .row .col-12 .body-card .information .map span,
+    .manage-posko .list-posko .row .col-12 .body-card .information .time span {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+
+    .manage-posko .list-posko .row .col-12 .body-card .information .food span,
+    .manage-posko .list-posko .row .col-12 .body-card .information .map span,
+    .manage-posko .list-posko .row .col-12 .body-card .information .time span {
+        font-size: 11px;
+    }
+}

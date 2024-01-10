@@ -6,6 +6,8 @@ import TitlePage from "../../components/Elements/TitlePage/TitlePage"
 import './managePosko.css'
 import { iconFood, iconMap, iconWatch, poskoImage } from "../../image"
 import { HiDotsHorizontal } from "react-icons/hi";
+import PoskoList from "../../components/Fragments/PoskoList/PoskoList"
+import { managePoskoList } from "../../utils/DataObject"
 
 
 function ManagePosko() {
@@ -34,31 +36,9 @@ function ManagePosko() {
 
                 <section className="list-posko mt-4 mb-4" >
                     <div className="row">
-                        <div className="col-12 col-md-6 col-lg-3 p-2 ">
-                            <Card >
-                                <div className="body-card">
-                                    <img src={poskoImage} alt="image posko" />
-                                    <div className="information p-3">
-                                        <h3 className="fw-bold mb-3" >Food Bank Booth</h3>
-                                        <div className="food d-flex align-items-center">
-                                            <img src={iconFood} alt="iconfood" />
-                                            <span className="text-secondary ms-2  fw-medium"  >400 Foods</span>
-                                        </div>
-                                        <div className="map d-flex align-items-center">
-                                            <img src={iconMap} alt="" />
-                                            <span className="text-secondary ms-2  fw-medium" >Dago, Bandung, Indonesia</span>
-                                        </div>
-                                        <div className="time d-flex align-items-center justify-content-between">
-                                            <div className="time-rapper">
-                                                <img src={iconWatch} alt="iconWatch" />
-                                                <span className="text-secondary ms-2  fw-medium" >12:00 PM</span>
-                                            </div>
-                                            <button className="btn border-0" ><HiDotsHorizontal size={25} /></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Card>
-                        </div>
+                        {managePoskoList.map((item, index) => (
+                            <PoskoList title={item.title} location={item.location} time={item.time} key={index} totalFoods={item.totalFoods} />
+                        ))}
                     </div>
                 </section>
             </section>

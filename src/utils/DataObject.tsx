@@ -120,6 +120,8 @@ export const data = [
 
 ]
 
+// posko table
+
 const styleLocationPosko = (rowData: any) => {
     const maxLength = 50
     const shortText = rowData.location.length > maxLength ? rowData.location.slice(0, maxLength) + "..." : rowData.location
@@ -248,4 +250,45 @@ export const dataPosko = [
         status: "Tutup",
     },
 
+]
+
+// posko table end
+
+export const managePoskoList = [
+    {
+        title: 'Food Bank Booth',
+        totalFoods: 400,
+        location: 'Dago, Bandung, Indonesia',
+        time: '12:00 PM'
+    },
+    {
+        title: 'Food Bank Booth',
+        totalFoods: 400,
+        location: 'Dago, Bandung, Indonesia',
+        time: '12:00 PM'
+    },
+    {
+        title: 'Food Bank Booth',
+        totalFoods: 400,
+        location: 'Dago, Bandung, Indonesia',
+        time: '12:00 PM'
+    },
+    {
+        title: 'Food Bank Booth',
+        totalFoods: 400,
+        location: 'Dago, Bandung, Indonesia',
+        time: '12:00 PM'
+    },
+    {
+        title: 'Food Bank Booth',
+        totalFoods: 400,
+        location: 'Dago, Bandung, Indonesia',
+        time: '12:00 PM'
+    },
+    {
+        title: 'Food Bank Booth',
+        totalFoods: 400,
+        location: 'Dago, Bandung, Indonesia',
+        time: '12:00 PM'
+    },
 ]
