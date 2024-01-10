@@ -2,6 +2,9 @@
     font-family: 'Inter', sans-serif;
 }
 
+.dashboard .statistic-chart .row .card canvas {
+    height: 360px !important;
+}
 
 .welcome-card img {
     height: 190px;

@@ -217,11 +217,11 @@ function Dasboard() {
                     </div>
                 </section>
 
-                <section className="statistic-chart mt-4    " >
+                <section className="statistic-chart mt-4 mb-4" >
                     <div className="row">
                         <div className="col-md-9 col-12">
                             <Card className="p-3" >
-                                <canvas ref={chartRef} height="335"></canvas>
+                                <canvas ref={chartRef} ></canvas>
                             </Card>
 
                         </div>
@@ -229,7 +229,7 @@ function Dasboard() {
                         <div className="col-md-3 col-12 chart-2">
 
                             <Card className="p-3" >
-                                <canvas ref={donutChartRef} height="335"></canvas>
+                                <canvas ref={donutChartRef} ></canvas>
                             </Card>
                         </div>
 

@@ -4,6 +4,7 @@
     height: 100vh;
     width: 20vw;
     top: 0;
+    position: sticky;
     transition: left 0.5s ease-out;
     font-family: 'Montserrat', sans-serif;
 }
