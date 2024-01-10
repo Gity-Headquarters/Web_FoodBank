@@ -196,7 +196,7 @@ function Dasboard() {
                 <section className="statistic-menu mt-3">
                     <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
                         {CardDashboard.map((item, index) => (
-                            <CardLinkDash key={index} title={item.title} icon={item.icon} total={item.total} percentase={item.percentase} raising={item.raising} />
+                            <CardLinkDash key={index} title={item.title} icon={item.icon} total={item.total} percentase={item.percentase} raising={item.raising} location={item.location} />
                         ))}
                     </div>
                 </section>

@@ -7,13 +7,14 @@ type Props = {
     icon: any,
     total: string,
     percentase: number,
-    raising: string
+    raising: string,
+    location?: string
 }
 
-function CardLinkDash({ title, icon, total, percentase, raising }: Props) {
+function CardLinkDash({ title, icon, total, percentase, raising, location }: Props) {
     return (
         <div className="col">
-            <CardLink location="/">
+            <CardLink location={location}>
                 <div className="p-3">
                     <div className="d-flex justify-content-between align-items-center">
                         <p className="m-0 text-secondary" >{title}</p>

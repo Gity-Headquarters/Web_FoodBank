@@ -14,21 +14,24 @@ export const CardDashboard = [
         total: '145',
         icon: peopleIcon,
         percentase: 10,
-        raising: 'down'
+        raising: 'down',
+        location: '/total-posko'
     },
     {
         title: 'Transaksi Donatur',
         total: '329',
         icon: peopleIcon,
         percentase: 10,
-        raising: 'up'
+        raising: 'up',
+        location: '/dana-admin'
     },
     {
         title: 'Dana Admin',
         total: '7.500.000',
         icon: peopleIcon,
         percentase: 10,
-        raising: 'up'
+        raising: 'up',
+        location: '/dana-admin'
     },
 ]
 
