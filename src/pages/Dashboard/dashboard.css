@@ -2,6 +2,11 @@
     font-family: 'Inter', sans-serif;
 }
 
+.dashboard .statistic-menu .row .col .card-link:hover {
+    transform: translateY(-10px);
+    transition: transform 250ms;
+}
+
 .dashboard .statistic-chart .row .card canvas {
     height: 360px !important;
 }
