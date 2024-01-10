@@ -4,8 +4,6 @@ import ButtonCancel from "../../components/Elements/ButtonCancel/ButtonCancel"
 import Card from "../../components/Elements/Card/Card"
 import TitlePage from "../../components/Elements/TitlePage/TitlePage"
 import './managePosko.css'
-import { iconFood, iconMap, iconWatch, poskoImage } from "../../image"
-import { HiDotsHorizontal } from "react-icons/hi";
 import PoskoList from "../../components/Fragments/PoskoList/PoskoList"
 import { managePoskoList } from "../../utils/DataObject"
 
