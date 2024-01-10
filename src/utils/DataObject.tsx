@@ -143,7 +143,7 @@ const styleStatusPosko = (rowData: any) => {
     return (
         <>
             <div style={{ display: "flex", alignItems: "center" }}>
-                <div className={changeItemStatus}>{rowData.status}</div>
+                <div className={`my-1 ${changeItemStatus}`}>{rowData.status}</div>
             </div>
         </>
     );
@@ -203,6 +203,42 @@ export const dataPosko = [
         id_posko: 123456789,
         total_food: "10",
         location: "Jakarta,Jl. Melati 5, RT.3/RW.1",
+        status: "Tutup",
+    },
+    {
+        id_posko: 123456789,
+        total_food: "10",
+        location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan",
+        status: "Tutup",
+    },
+    {
+        id_posko: 123456789,
+        total_food: "10",
+        location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan",
+        status: "Tutup",
+    },
+    {
+        id_posko: 123456789,
+        total_food: "10",
+        location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan",
+        status: "Tutup",
+    },
+    {
+        id_posko: 123456789,
+        total_food: "10",
+        location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan",
+        status: "Tutup",
+    },
+    {
+        id_posko: 123456789,
+        total_food: "10",
+        location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan",
+        status: "Tutup",
+    },
+    {
+        id_posko: 123456789,
+        total_food: "10",
+        location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan",
         status: "Tutup",
     },
     {

@@ -41,7 +41,7 @@ function DanaAdmin() {
                 </section>
 
                 <section className="data-donatur mt-4 d-grid align-items-center">
-                    <Card className="p-3" >
+                    <Card className="p-2 p-sm-3" >
                         <div className="d-flex row row-cols-lg-2 row-cols-1 justify-content-between">
                             <div className="d-flex gap-4 mb-3">
                                 <div className="col  d-flex filtering-data-chart ">
