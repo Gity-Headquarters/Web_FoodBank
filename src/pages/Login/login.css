@@ -27,3 +27,9 @@
     background-color: #FF7F0A;
     color: #FFF;
 }
+
+.card_login form .password .icon-password {
+    top: 44px;
+    right: 0;
+    color: #636363;
+}

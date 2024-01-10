@@ -3,6 +3,8 @@ import './login.css'
 import { logoLogin } from '../../image'
 import InputForm from '../../components/Elements/Input/Input'
 import { login } from '../../service/Authentication'
+import { FaEyeSlash } from "react-icons/fa6";
+import { IoEye } from "react-icons/io5";
 
 
 function Login() {
@@ -19,6 +21,8 @@ function Login() {
     const [buttonLogin, setButtonLogin] = useState(false)
     const [disabled, setDisabled] = useState(true)
     const [errorMsg, setErrorMsg] = useState("d-none")
+    const [showPassword, setShowPassword] = useState(true)
+    const [typePassword, setTypePassword] = useState("password")
 
     const [formData, setFormData] = useState({
         email: "",
@@ -61,6 +65,15 @@ function Login() {
 
     console.log(formData);
 
+    const togglePassword = () => {
+        setShowPassword(!showPassword);
+        if (typePassword === "password") {
+            setTypePassword("text");
+        } else {
+            setTypePassword("password");
+        }
+    }
+
 
     return (
         <section className="login d-flex p-3 justify-content-center align-items-center" id='login'>
@@ -73,7 +86,10 @@ function Login() {
                 </div>
                 <form onSubmit={handleLogin} >
                     <InputForm htmlFor="email" onChange={handleChange} type="email" value={formData.email} placeholder="Masukkan Email" />
-                    <InputForm htmlFor="password" onChange={handleChange} type="password" value={formData.password} placeholder="Masukkan Kata Sandi" />
+                    <div className="password position-relative">
+                        <button onClick={togglePassword} type='button' className='icon-password border-0 bg-transparent d-flex position-absolute  justify-content-center align-items-center pe-4' > {showPassword ? <FaEyeSlash size={20} /> : <IoEye size={20} />} </button>
+                        <InputForm htmlFor="password" onChange={handleChange} type={typePassword} value={formData.password} placeholder="Masukkan Kata Sandi" />
+                    </div>
                     <p className={` text-danger fw-medium mt-4 ${errorMsg}`} > Incorect Email or Password</p>
                     <button disabled={disabled} className={`btn ${buttonLogin ? 'btn-login' : 'btn-secondary text-white-50'} w-100 fw-semibold fs-5 mt-5`} >Masuk</button>
                 </form>
