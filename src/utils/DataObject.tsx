@@ -264,7 +264,7 @@ export const managePoskoList = [
     {
         title: 'Food Bank Booth',
         totalFoods: 400,
-        location: 'Dago, Bandung, Indonesia',
+        location: 'Dago, Bandung, Indonesia cek teks panjang',
         time: '12:00 PM'
     },
     {
@@ -282,7 +282,7 @@ export const managePoskoList = [
     {
         title: 'Food Bank Booth',
         totalFoods: 400,
-        location: 'Dago, Bandung, Indonesia',
+        location: 'Dago, Bandung, Indonesia cek teks panjang',
         time: '12:00 PM'
     },
     {

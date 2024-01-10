@@ -10,6 +10,8 @@ type Props = {
 }
 
 function PoskoList({ title, totalFoods, location, time }: Props) {
+    const maxLength = 24
+    const shortText = location.length > maxLength ? location.slice(0, maxLength) + "..." : location
     return (
         <div className="col-12 col-md-6 col-lg-3 p-2 ">
             <Card >
@@ -23,7 +25,7 @@ function PoskoList({ title, totalFoods, location, time }: Props) {
                         </div>
                         <div className="map d-flex align-items-center">
                             <img src={iconMap} alt="" />
-                            <span className="text-secondary ms-2  fw-medium" >{location}</span>
+                            <span className="text-secondary ms-2  fw-medium" >{shortText}</span>
                         </div>
                         <div className="time d-flex align-items-center justify-content-between">
                             <div className="time-rapper">
