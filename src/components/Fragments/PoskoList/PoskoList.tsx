@@ -1,5 +1,5 @@
 import Card from '../../Elements/Card/Card'
-import { iconFood, iconMap, iconWatch, poskoImage } from '../../../image'
+import { iconFood, iconMap, iconWatch } from '../../../image'
 import { HiDotsHorizontal } from 'react-icons/hi'
 
 type Props = {

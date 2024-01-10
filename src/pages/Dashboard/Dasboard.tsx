@@ -122,21 +122,15 @@ function Dasboard() {
                 donutChartInstanceRef.current.destroy();
             }
 
-            // Data Posko
-            const poskoData = [5, 15, 25, 33, 34, 12, 67, 33, 12, 10, 40, 50, 20, 40, 30];
-            const totalPosko = poskoData.reduce((acc, value) => acc + value, 0);
-
-            // Pengguna Aktif
-            const penggunaAktif = 100 - totalPosko;
 
             // Create new donut chart instance
             donutChartInstanceRef.current = new Chart(donutCtx, {
                 type: "doughnut",
                 data: {
-                    labels: ["Pengguna Aktif", "Posko"],
+                    labels: ['Donatur', 'Pengambilan Makanan'],
                     datasets: [
                         {
-                            data: [penggunaAktif, totalPosko],
+                            data: [90, 100],
                             backgroundColor: ["#883DCF", "#F86624"],
                             borderWidth: 2,
                         },
@@ -151,17 +145,6 @@ function Dasboard() {
                             align: "end",
                             labels: {
                                 usePointStyle: true,
-                                generateLabels: function (chart) {
-                                    const labels = Chart.defaults.plugins.legend.labels.generateLabels(chart);
-                                    labels.forEach((label) => {
-                                        if (label.text === "Pengguna Aktif") {
-                                            label.fillStyle = "#883DCF";
-                                        } else if (label.text === "Posko") {
-                                            label.fillStyle = "#F86624";
-                                        }
-                                    });
-                                    return labels;
-                                },
                             },
                         },
                         title: {
@@ -180,9 +163,10 @@ function Dasboard() {
                             display: true,
                             text: "Donatur & Pengambilan Makanan  ",
                             font: {
-                                size: 14
+                                size: 14,
                             },
                             align: "start",
+
 
                         }
                     },
@@ -219,14 +203,14 @@ function Dasboard() {
 
                 <section className="statistic-chart mt-4 mb-4" >
                     <div className="row">
-                        <div className="col-md-9 col-12">
+                        <div className="col-lg-9 col-12">
                             <Card className="p-3" >
                                 <canvas ref={chartRef} ></canvas>
                             </Card>
 
                         </div>
 
-                        <div className="col-md-3 col-12 chart-2">
+                        <div className="col-lg-3 col-12 chart-2">
 
                             <Card className="p-3" >
                                 <canvas ref={donutChartRef} ></canvas>
