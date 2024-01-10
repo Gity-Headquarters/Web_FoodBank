@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './login.css'
 import { logoLogin } from '../../image'
-import Input from '../../components/Elements/Input/Input'
+import InputForm from '../../components/Elements/Input/Input'
 import { login } from '../../service/Authentication'
 // import { login } from '../../service/Authentication'
 
@@ -73,8 +73,8 @@ function Login() {
                     <h1 className='text-center'>Food Bank</h1>
                 </div>
                 <form onSubmit={handleLogin} >
-                    <Input htmlFor="email" onChange={handleChange} type="email" value={formData.email} placeholder="Masukkan Email" />
-                    <Input htmlFor="password" onChange={handleChange} type="password" value={formData.password} placeholder="Masukkan Password" />
+                    <InputForm htmlFor="email" onChange={handleChange} type="email" value={formData.email} placeholder="Masukkan Email" />
+                    <InputForm htmlFor="password" onChange={handleChange} type="password" value={formData.password} placeholder="Masukkan Password" />
                     <p className={` text-danger fw-medium mt-4 ${errorMsg}`} > Incorect Email or Password</p>
                     <button disabled={disabled} className={`btn ${buttonLogin ? 'btn-login' : 'btn-secondary text-white-50'} w-100 fw-semibold fs-5 mt-5`} >Masuk</button>
                 </form>
