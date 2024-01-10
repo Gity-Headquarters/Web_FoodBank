@@ -2,7 +2,7 @@ import './inputform.css'
 
 type Props = {
     htmlFor: string
-    title: string
+    title?: string
     type: string
     onChange: any
     value: string
