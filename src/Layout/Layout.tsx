@@ -12,7 +12,7 @@ import { FaArrowCircleLeft } from "react-icons/fa";
 
 function Layout({ children }: any) {
     return (
-        <>
+        <div className="layout d-flex ">
             <div className="sidebar">
                 <div className="offcanvass offcanvas-start ">
                     <div className="offcanvas-header d-flex justify-content-center">
@@ -52,10 +52,10 @@ function Layout({ children }: any) {
                 </div>
             </div>
 
-            <main>
+            <main  >
                 {children}
             </main>
-        </>
+        </div>
     )
 }
 
