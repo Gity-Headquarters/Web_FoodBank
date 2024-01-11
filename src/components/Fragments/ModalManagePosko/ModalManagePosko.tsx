@@ -1,6 +1,5 @@
-type Props = {}
 
-const ModalManagePosko = (props: Props) => {
+const ModalManagePosko = () => {
     return (
         <div>ModalManagePosko</div>
     )
