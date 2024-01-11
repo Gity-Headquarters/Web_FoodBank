@@ -44,14 +44,6 @@
 }
 
 @media screen and (max-width: 1034px) {
-    .sidebar .menu .sidebar-link .iconNavbar svg {
-        width: 20px;
-        height: 20px;
-    }
-
-    .sidebar .menu .sidebar-link {
-        font-size: 15px;
-    }
 
     .statistic-menu .row .col .percentase {
         font-size: 10px;
@@ -59,6 +51,32 @@
     }
 }
 
+@media screen and (max-width: 992px) {
+    .statistic-menu .row .col .percentase {
+        font-size: 15px;
+        gap: 10px !important;
+    }
+
+    .statistic-menu .row .col .total h2 {
+        font-size: 30px;
+    }
+
+    .statistic-menu .row .col .d-flex .title-card {
+        font-size: 16px;
+    }
+
+
+}
+
+@media screen and (max-width: 437px) {
+    .welcome-card .row .col-12 h2 {
+        font-size: 19px;
+    }
+
+    .welcome-card .row .col-12 span {
+        font-size: 12px;
+    }
+}
 
 @media screen and (max-width: 767px) {
     #dashboard .statistic-chart .row .chart-2 {
