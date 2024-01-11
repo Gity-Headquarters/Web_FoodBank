@@ -5,15 +5,13 @@ import { welcomeAdmin } from "../../image"
 import './dashboard.css'
 import CardLinkDash from "../../components/Fragments/CardLinkDashboard/CardLinkDash"
 import { CardDashboard } from "../../utils/DataObject"
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Chart from "chart.js/auto";
+import DashboardLoader from "../../components/Loader/DashboardLoader/DashcardLoader"
+import DashLineLoader from "../../components/Loader/DashboardLoader/DashLineLoader"
+import DashCircleLoader from "../../components/Loader/DashboardLoader/DashCircleLoader"
 
 function Dasboard() {
-    const chartRef = useRef<HTMLCanvasElement | null>(null);
-    const chartInstanceRef = useRef<Chart<"line"> | null>(null);
-    const donutChartRef = useRef<HTMLCanvasElement | null>(null);
-    const donutChartInstanceRef = useRef<Chart<"doughnut"> | null>(null);
-
     useEffect(() => {
         const ctx = chartRef.current?.getContext("2d");
 
@@ -176,6 +174,15 @@ function Dasboard() {
 
     }, []);
 
+    const chartRef = useRef<HTMLCanvasElement | null>(null);
+    const chartInstanceRef = useRef<Chart<"line"> | null>(null);
+    const donutChartRef = useRef<HTMLCanvasElement | null>(null);
+    const donutChartInstanceRef = useRef<Chart<"doughnut"> | null>(null);
+    const [loading, setLoading] = useState(true);
+
+    setInterval(() => {
+        setLoading(false);
+    }, 1000);
 
     return (
         <Layout>
@@ -195,9 +202,13 @@ function Dasboard() {
 
                 <section className="statistic-menu mt-3">
                     <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-                        {CardDashboard.map((item, index) => (
-                            <CardLinkDash key={index} title={item.title} icon={item.icon} total={item.total} percentase={item.percentase} raising={item.raising} location={item.location} />
-                        ))}
+                        {loading ? (
+                            <DashboardLoader numberOfCards={4} />
+                        ) : (
+                            CardDashboard.map((item, index) => (
+                                <CardLinkDash key={index} title={item.title} icon={item.icon} total={item.total} percentase={item.percentase} raising={item.raising} location={item.location} />
+                            ))
+                        )}
                     </div>
                 </section>
 
@@ -207,14 +218,13 @@ function Dasboard() {
                             <Card className="p-3" >
                                 <canvas ref={chartRef} ></canvas>
                             </Card>
-
                         </div>
-
                         <div className="col-lg-3 col-12 chart-2">
 
                             <Card className="p-3" >
                                 <canvas ref={donutChartRef} ></canvas>
                             </Card>
+
                         </div>
 
                     </div>
