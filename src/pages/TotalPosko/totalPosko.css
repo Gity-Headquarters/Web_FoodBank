@@ -18,3 +18,20 @@
     text-align: center;
 
 }
+
+@media screen and (max-width: 392px) {
+    .total-posko .hero-total-posko img {
+        height: 35px;
+        width: 35px;
+    }
+}
+
+@media screen and (max-width: 507px) {
+    .total-posko .hero-total-posko .card-normal h3 {
+        font-size: 30px;
+    }
+
+    .total-posko .hero-total-posko .card-normal {
+        height: auto !important;
+    }
+}

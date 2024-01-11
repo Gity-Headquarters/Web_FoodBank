@@ -26,7 +26,7 @@ const TotalPosko = () => {
             <section className="total-posko" id="total-posko">
                 <TitlePage title="Total Posko" />
                 <section className="hero-total-posko">
-                    <Card className="p-4" >
+                    <Card className="p-3 p-sm-4" >
                         <div className="d-flex justify-content-between my-auto">
                             <div className="text-start d-flex flex-column align-items-start my-auto">
                                 <span className="text-secondary fw-medium" >Total Posko</span>
