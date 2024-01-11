@@ -178,9 +178,12 @@ function Dasboard() {
     const donutChartInstanceRef = useRef<Chart<"doughnut"> | null>(null);
     const [loading, setLoading] = useState(true);
 
-    setInterval(() => {
-        setLoading(false);
-    }, 1000);
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setLoading(false);
+        }, 1000);
+        return () => clearInterval(intervalId);
+    }, []);
 
     return (
         <Layout>

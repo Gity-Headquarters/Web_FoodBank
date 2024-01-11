@@ -6,13 +6,14 @@ type Props = {
     type: string
     onChange: any
     value: string
-    placeholder: string
+    placeholder?: string,
+    className?: string
 }
 
-function InputForm({ htmlFor, title, type, onChange, value, placeholder }: Props) {
+function InputForm({ htmlFor, title, type, onChange, value, placeholder, className }: Props) {
     return (
-        <div className="mb-3 form-input-login" >
-            <label htmlFor={htmlFor} className="form-label">
+        <div className={`mb-3 ${className}`} >
+            <label htmlFor={htmlFor} className="form-label ">
                 {title}
             </label>
             <input

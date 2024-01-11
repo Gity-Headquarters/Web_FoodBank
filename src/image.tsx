@@ -11,8 +11,10 @@ import poskoImage from './assets/poskoImage.svg'
 import iconFood from './assets/iconFood.svg'
 import iconMap from './assets/iconMap.svg'
 import iconWatch from './assets/iconWatch.svg'
+import defaultImageModal from './assets/defaultImageModal.svg'
+import iconPencil from './assets/iconPencil.svg'
 
 
 export {
-    logoLogin, logoSidebar, welcomeAdmin, peopleIcon, wallet1, human1, human2, human3, human4, poskoImage, iconFood, iconMap, iconWatch
+    logoLogin, logoSidebar, welcomeAdmin, peopleIcon, wallet1, human1, human2, human3, human4, poskoImage, iconFood, iconMap, iconWatch, defaultImageModal, iconPencil
 }

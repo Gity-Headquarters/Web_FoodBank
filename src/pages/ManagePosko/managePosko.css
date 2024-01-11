@@ -29,6 +29,21 @@
     width: 35px;
 }
 
+/* modal */
+
+
+.manage-posko .modal form .image {
+    border: 10px solid #FBEEDC;
+    width: 100%;
+    border-radius: 20px;
+    height: 140px;
+    padding: 5px;
+}
+
+.manage-posko .modal form .btn-input {
+    color: #FBEEDC;
+}
+
 
 @media screen and (max-width: 1449px) {
     .manage-posko .list-posko .row .col-12 .body-card .information h3 {
