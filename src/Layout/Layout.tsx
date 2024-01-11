@@ -4,11 +4,11 @@ import { BsGrid } from "react-icons/bs";
 import {
     LuWallet,
 } from "react-icons/lu";
-import { MdNoFood } from "react-icons/md";
 import { MdManageHistory } from "react-icons/md";
 import './layout.css'
 import ButtonCancel from "../components/Elements/ButtonCancel/ButtonCancel";
 import { FaArrowCircleLeft } from "react-icons/fa";
+import { SiHomeadvisor } from "react-icons/si";
 
 function Layout({ children }: any) {
     return (
@@ -33,7 +33,7 @@ function Layout({ children }: any) {
                             />
                             <hr />
                             <SidebarItem
-                                icon={<MdNoFood />}
+                                icon={<SiHomeadvisor />}
                                 title="Total Posko"
                                 location="/total-posko"
                             />

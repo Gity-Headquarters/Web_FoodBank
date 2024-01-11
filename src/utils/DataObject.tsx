@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { human1, human2, human3, human4, peopleIcon, poskoImage } from "../image";
+import { DashDonatur, DashMoney, DashPosko, human1, human2, human3, human4, peopleIcon, poskoImage } from "../image";
 
 export const CardDashboard = [
     {
@@ -12,7 +12,7 @@ export const CardDashboard = [
     {
         title: 'Total Posko',
         total: '145',
-        icon: peopleIcon,
+        icon: DashPosko,
         percentase: 10,
         raising: 'down',
         location: '/total-posko'
@@ -20,7 +20,7 @@ export const CardDashboard = [
     {
         title: 'Transaksi Donatur',
         total: '329',
-        icon: peopleIcon,
+        icon: DashDonatur,
         percentase: 10,
         raising: 'up',
         location: '/dana-admin'
@@ -28,7 +28,7 @@ export const CardDashboard = [
     {
         title: 'Dana Admin',
         total: '7.500.000',
-        icon: peopleIcon,
+        icon: DashMoney,
         percentase: 10,
         raising: 'up',
         location: '/dana-admin'
@@ -84,8 +84,8 @@ export const columnTable = [
         header: "Jumlah Pembayaran",
     },
     {
-        field: "payment_status",
-        header: "Status Pembayaran",
+        field: "uuid",
+        header: "UUID",
     },
 
 ];
@@ -96,28 +96,28 @@ export const data = [
         patient_name: "Abdul",
         transaction_id: "123456789",
         price: "Rp 100.000",
-        payment_status: "Lunas",
+        uuid: "4a13a318-bda5-47bf-84d3-42d3c01a3533",
         image: human1
     },
     {
         patient_name: "Abdul",
         transaction_id: "123456789",
         price: "Rp 100.000",
-        payment_status: "Lunas",
+        uuid: "4a13a318-bda5-47bf-84d3-42d3c01a3533",
         image: human2
     },
     {
         patient_name: "Abdul",
         transaction_id: "123456789",
         price: "Rp 100.000",
-        payment_status: "Lunas",
+        uuid: "4a13a318-bda5-47bf-84d3-42d3c01a3533",
         image: human3
     },
     {
         patient_name: "Gabriel Cuki",
         transaction_id: "123456789",
         price: "Rp 100.000",
-        payment_status: "Lunas",
+        uuid: "4a13a318-bda5-47bf-84d3-42d3c01a3533",
         image: human4
     },
 

@@ -138,7 +138,7 @@ function Dasboard() {
                     plugins: {
                         legend: {
                             position: "bottom",
-                            align: "end",
+                            align: "center",
                             labels: {
                                 usePointStyle: true,
                             },
@@ -162,8 +162,6 @@ function Dasboard() {
                                 size: 14,
                             },
                             align: "start",
-
-
                         }
                     },
                 },

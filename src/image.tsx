@@ -13,8 +13,13 @@ import iconMap from './assets/iconMap.svg'
 import iconWatch from './assets/iconWatch.svg'
 import defaultImageModal from './assets/defaultImageModal.svg'
 import iconPencil from './assets/iconPencil.svg'
+import iconAdmin from './assets/iconAdmin.svg'
+import DashMoney from './assets/DashMoney.svg'
+import DashDonatur from './assets/DashDonatur.svg'
+import DashPosko from './assets/dashPosko.svg'
 
 
 export {
-    logoLogin, logoSidebar, welcomeAdmin, peopleIcon, wallet1, human1, human2, human3, human4, poskoImage, iconFood, iconMap, iconWatch, defaultImageModal, iconPencil
+    logoLogin, logoSidebar, welcomeAdmin, peopleIcon, wallet1, human1,
+    human2, human3, human4, poskoImage, iconFood, iconMap, iconWatch, defaultImageModal, iconPencil, iconAdmin, DashDonatur, DashMoney, DashPosko
 }
