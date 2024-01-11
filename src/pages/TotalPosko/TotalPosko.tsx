@@ -5,7 +5,7 @@ import ColumnTable from "../../components/Elements/ColumTable/ColumnTable"
 import Search from "../../components/Elements/Search/Search"
 import TitlePage from "../../components/Elements/TitlePage/TitlePage"
 import Table from "../../components/Fragments/Table/Table"
-import { wallet1 } from "../../image"
+import { DashPosko } from "../../image"
 import { columnTablePosko, dataPosko } from "../../utils/DataObject"
 import './totalPosko.css'
 
@@ -32,7 +32,7 @@ const TotalPosko = () => {
                                 <span className="text-secondary fw-medium" >Total Posko</span>
                                 <h3 className="fw-semibold " >145</h3>
                             </div>
-                            <img className="mb-5" src={wallet1} alt="walet1" />
+                            <img className="mb-5" src={DashPosko} alt="walet1" />
                         </div>
                     </Card>
                 </section>
