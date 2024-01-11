@@ -6,9 +6,16 @@ import TitlePage from "../../components/Elements/TitlePage/TitlePage"
 import './managePosko.css'
 import PoskoList from "../../components/Fragments/PoskoList/PoskoList"
 import { managePoskoList } from "../../utils/DataObject"
+import CardPoskoLoader from "../../components/Loader/ManagePoskoLoader/CardPoskoLoader"
+import { useState } from "react"
 
 
 function ManagePosko() {
+    const [loading, setLoading] = useState(true)
+    setInterval(() => {
+        setLoading(false);
+    }, 1000);
+
     return (
         <Layout>
             <section className="manage-posko" id="manage-posko">
@@ -32,9 +39,11 @@ function ManagePosko() {
 
                 <section className="list-posko mt-4 mb-4" >
                     <div className="row">
-                        {managePoskoList.map((item, index) => (
-                            <PoskoList title={item.title} location={item.location} time={item.time} key={index} totalFoods={item.totalFoods} image={item.image} />
-                        ))}
+                        {loading ? <CardPoskoLoader numberOfCards={8} />
+                            : managePoskoList.map((item, index) => (
+                                <PoskoList title={item.title} location={item.location} time={item.time} key={index} totalFoods={item.totalFoods} image={item.image} />
+                            ))
+                        }
                     </div>
                 </section>
             </section>

@@ -8,8 +8,6 @@ import { CardDashboard } from "../../utils/DataObject"
 import { useEffect, useRef, useState } from "react";
 import Chart from "chart.js/auto";
 import DashboardLoader from "../../components/Loader/DashboardLoader/DashcardLoader"
-import DashLineLoader from "../../components/Loader/DashboardLoader/DashLineLoader"
-import DashCircleLoader from "../../components/Loader/DashboardLoader/DashCircleLoader"
 
 function Dasboard() {
     useEffect(() => {
