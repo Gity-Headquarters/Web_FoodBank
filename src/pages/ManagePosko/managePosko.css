@@ -29,6 +29,7 @@
     width: 35px;
 }
 
+
 @media screen and (max-width: 1449px) {
     .manage-posko .list-posko .row .col-12 .body-card .information h3 {
         font-size: 19px;
@@ -68,12 +69,58 @@
     }
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1120px) {
 
     .manage-posko .list-posko .row .col-12 .body-card .information .food span,
     .manage-posko .list-posko .row .col-12 .body-card .information .map span,
     .manage-posko .list-posko .row .col-12 .body-card .information .time span {
         font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 1054px) {
+
+    .manage-posko .list-posko .row .col-12 .body-card .information .food span,
+    .manage-posko .list-posko .row .col-12 .body-card .information .map span,
+    .manage-posko .list-posko .row .col-12 .body-card .information .time span {
+        font-size: 10px;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+
+    .manage-posko .list-posko .row .col-12 .body-card .information .food span,
+    .manage-posko .list-posko .row .col-12 .body-card .information .map span,
+    .manage-posko .list-posko .row .col-12 .body-card .information .time span {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+
+    .manage-posko .list-posko .row .col-12 .body-card .information .food span,
+    .manage-posko .list-posko .row .col-12 .body-card .information .map span,
+    .manage-posko .list-posko .row .col-12 .body-card .information .time span {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 590px) {
+
+    .manage-posko .list-posko .row .col-12 .body-card .information .food span,
+    .manage-posko .list-posko .row .col-12 .body-card .information .map span,
+    .manage-posko .list-posko .row .col-12 .body-card .information .time span {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 590px) {
+
+    .manage-posko .list-posko .row .col-12 .body-card .information .food span,
+    .manage-posko .list-posko .row .col-12 .body-card .information .map span,
+    .manage-posko .list-posko .row .col-12 .body-card .information .time span {
+        font-size: 16px;
     }
 }
 
@@ -103,5 +150,20 @@
     .add-booth-and-food .row .col-12 button {
         font-size: 9px;
         padding: 3px 8px;
+    }
+
+    .manage-posko .list-posko .row .col-12 .body-card .information .food span,
+    .manage-posko .list-posko .row .col-12 .body-card .information .map span,
+    .manage-posko .list-posko .row .col-12 .body-card .information .time span {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 306px) {
+
+    .manage-posko .list-posko .row .col-12 .body-card .information .food span,
+    .manage-posko .list-posko .row .col-12 .body-card .information .map span,
+    .manage-posko .list-posko .row .col-12 .body-card .information .time span {
+        font-size: 12px;
     }
 }
