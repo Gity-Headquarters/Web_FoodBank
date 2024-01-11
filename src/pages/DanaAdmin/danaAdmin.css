@@ -64,10 +64,28 @@
 
 }
 
+@media screen and (max-width: 507px) {
+    .transaction .card-normal h3 {
+        font-size: 30px;
+    }
+
+    .transaction .card-normal {
+        height: auto;
+    }
+
+
+}
+
 @media screen and (max-width: 392px) {
     .filtering-data-chart h4 {
         font-size: 12px;
         line-height: 0;
         margin-bottom: 0px;
     }
+
+    .transaction .card-normal img {
+        height: 35px;
+        width: 35px;
+    }
+
 }
