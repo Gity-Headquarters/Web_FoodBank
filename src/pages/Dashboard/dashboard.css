@@ -19,6 +19,47 @@
     gap: 100px;
 } */
 
+
+@media screen and (max-width: 1294px) {
+    .statistic-menu .row .col .percentase {
+        font-size: 14px;
+        gap: 9px !important;
+    }
+}
+
+@media screen and (max-width: 1176px) {
+    .statistic-menu .row .col .d-flex .title-card {
+        font-size: 12px;
+    }
+
+    .statistic-menu .row .col .percentase {
+        font-size: 12px;
+
+    }
+
+    .statistic-menu .row .col .total h2 {
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (max-width: 1034px) {
+    .sidebar .menu .sidebar-link .iconNavbar svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .sidebar .menu .sidebar-link {
+        font-size: 15px;
+    }
+
+    .statistic-menu .row .col .percentase {
+        font-size: 10px;
+        gap: 9px !important;
+    }
+}
+
+
 @media screen and (max-width: 767px) {
     #dashboard .statistic-chart .row .chart-2 {
         margin-top: 28px;
