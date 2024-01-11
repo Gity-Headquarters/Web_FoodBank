@@ -76,6 +76,10 @@
     .welcome-card .row .col-12 span {
         font-size: 12px;
     }
+
+    .dashboard .statistic-chart .row .card canvas {
+        width: 98% !important;
+    }
 }
 
 @media screen and (max-width: 767px) {
