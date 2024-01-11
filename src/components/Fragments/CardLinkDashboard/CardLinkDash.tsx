@@ -17,7 +17,7 @@ function CardLinkDash({ title, icon, total, percentase, raising, location }: Pro
             <CardLink location={location}>
                 <div className="p-3">
                     <div className="d-flex justify-content-between align-items-center">
-                        <p className="m-0 text-secondary" >{title}</p>
+                        <p className="m-0 title-card text-secondary" >{title}</p>
                         <img src={icon} alt="icon-pengguna" />
                     </div>
                     <div className="total mt-2">
