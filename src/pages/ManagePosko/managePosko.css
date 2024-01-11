@@ -62,11 +62,46 @@
     }
 }
 
+@media screen and (max-width: 1215px) {
+    .add-booth-and-food .row h3 {
+        font-size: 20px;
+    }
+}
+
 @media screen and (max-width: 1050px) {
 
     .manage-posko .list-posko .row .col-12 .body-card .information .food span,
     .manage-posko .list-posko .row .col-12 .body-card .information .map span,
     .manage-posko .list-posko .row .col-12 .body-card .information .time span {
         font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 817px) {
+    .add-booth-and-food .row h3 {
+        font-size: 18px;
+    }
+
+    .add-booth-and-food .row .col-12 button {
+        font-size: 12px;
+        font-weight: 200;
+    }
+}
+
+@media screen and (max-width: 403px) {
+    .add-booth-and-food .row .col-12 button {
+        font-size: 10px;
+        font-weight: 200;
+    }
+}
+
+@media screen and (max-width: 379px) {
+    .add-booth-and-food .row h3 {
+        font-size: 14px;
+    }
+
+    .add-booth-and-food .row .col-12 button {
+        font-size: 9px;
+        padding: 3px 8px;
     }
 }

@@ -17,7 +17,7 @@ function ManagePosko() {
                     <Card className="p-2 p-md-4 rounded-3   " >
                         <div className=" row  d-flex justify-content-between">
 
-                            <h3 className="col-12 col-md-5 d-flex justify-content-center justify-content-md-start" >Manage Posko</h3>
+                            <h3 className="col-12 col-md-5 d-flex justify-content-center justify-content-md-start fw-semibold align-items-center" >Tambah Makanan & Posko</h3>
 
                             <div className="col-12 col-md-7 button-add d-flex gap-2  justify-content-center justify-content-md-end">
                                 <ButtonCancel className="fw-semibold d-flex gap-2 justify-content-center align-items-center"  >

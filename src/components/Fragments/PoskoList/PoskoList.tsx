@@ -14,7 +14,7 @@ function PoskoList({ title, totalFoods, location, time, image }: Props) {
     const maxLength = 24
     const shortText = location.length > maxLength ? location.slice(0, maxLength) + "..." : location
     return (
-        <div className="col-12 col-md-6 col-lg-3 p-2 ">
+        <div className="col-12 col-sm-6 col-lg-3 p-2 ">
             <Card >
                 <div className="body-card">
                     <img src={image} alt="image posko" />
