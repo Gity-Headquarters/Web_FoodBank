@@ -12,6 +12,9 @@ import Modal from "../../components/Fragments/Modal/Modal"
 import { defaultImageModal, iconPencil } from "../../image"
 import InputForm from "../../components/Elements/Input/Input"
 import ButtonConfirm from "../../components/Elements/ButtonConfirm/ButtonConfirm"
+import { createBooth } from "../../service/managePosko"
+import toast from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 
 function ManagePosko() {
@@ -56,12 +59,91 @@ function ManagePosko() {
     };
 
 
-    console.log(formData);
 
+
+    const handleCreateBooth = async (e: any) => {
+        e.preventDefault();
+        const apiRequest = new FormData();
+        apiRequest.append('image', formData.image as File); // image is a File object
+        apiRequest.append('name', formData.name);
+        apiRequest.append('address', formData.address);
+        apiRequest.append('time_open', formData.time_open);
+        apiRequest.append('time_close', formData.time_close);
+        apiRequest.append('food_total', formData.food_total.toString());
+        apiRequest.append('info_booth', formData.info_booth);
+        apiRequest.append('status', formData.status);
+        apiRequest.append('description', formData.description);
+        apiRequest.append('number_phone', formData.number_phone);
+
+        await createBooth(apiRequest, (status: boolean, res: any) => {
+            if (status) {
+                setFormData({
+                    image: null as File | null,
+                    name: '',
+                    address: '',
+                    time_open: ``,
+                    time_close: '',
+                    food_total: 1,
+                    info_booth: 'infoBooth',
+                    status: 'close',
+                    description: 'description',
+                    number_phone: ''
+                })
+                addPosko();
+            } else {
+                console.log(res);
+                errorPosko();
+            }
+        })
+
+    }
+
+    console.log(formData);
+    const addPosko = () =>
+        toast.success("Posko berhasil di tambahkan ✨🚀", {
+            duration: 4000,
+            position: 'bottom-center',
+            className: "custom-toast ",
+
+            // Aria
+            ariaProps: {
+                role: "status",
+                "aria-live": "polite",
+            },
+        });
+
+    const errorPosko = () =>
+        toast.error(
+            "Posko gagal ditambah tolong periksa dan masukan data yang sesuai ",
+            {
+                duration: 4000,
+                position: 'bottom-center',
+                className: "custom-toast",
+
+                // Aria
+                ariaProps: {
+                    role: "status",
+                    "aria-live": "polite",
+                },
+            }
+        );
+
+    // const updateKonseling = () =>
+    //     toast.success("Paket konseling berhasil update ✨🚀", {
+    //         duration: 4000,
+    //         position: 'bottom-center',
+    //         className: "custom-toast",
+
+    //         // Aria
+    //         ariaProps: {
+    //             role: "status",
+    //             "aria-live": "polite",
+    //         },
+    //     });
 
     return (
         <Layout>
-            <section className="manage-posko" id="manage-posko">
+            <section className="manage-posko position-relative" id="manage-posko">
                 <TitlePage title="Manage Posko" />
                 <section className="add-booth-and-food">
                     <Card className="p-2 p-md-4 rounded-3   " >
@@ -143,7 +225,7 @@ function ManagePosko() {
                         <button className="btn-close border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close" />
                     </div>
 
-                    <form className="p-4">
+                    <form className="p-4" onSubmit={handleCreateBooth}>
                         <div className="position-relative mx-auto mb-4">
                             <div className="image d-flex justify-content-center ">
                                 {formData.image && formData.image instanceof Blob ? (
@@ -178,12 +260,15 @@ function ManagePosko() {
                             <ButtonCancel >
                                 Batal
                             </ButtonCancel>
-                            <ButtonConfirm>
+                            <ButtonConfirm type="submit" bsDismiss={"modal"}  >
                                 Simpan
                             </ButtonConfirm>
                         </div>
                     </form>
                 </Modal>
+                <div className="position-relative d-flex justify-content-end">
+                    <Toaster />
+                </div>
 
             </section>
 

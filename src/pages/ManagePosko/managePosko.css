@@ -69,6 +69,10 @@
     background-color: #f19109;
 }
 
+.manage-posko .custom-toast {
+    min-width: 50vw;
+}
+
 @media screen and (max-width: 1449px) {
     .manage-posko .list-posko .row .col-12 .body-card .information h3 {
         font-size: 19px;
