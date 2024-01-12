@@ -16,6 +16,7 @@
 .manage-posko .list-posko .row .col-12 .body-card img {
     width: 100%;
     height: 200px;
+    border-radius: 9px 9px 0px 0px;
 }
 
 .manage-posko .list-posko .row .col-12 .body-card .information .food img,
