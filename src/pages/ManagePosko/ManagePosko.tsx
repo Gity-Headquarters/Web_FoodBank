@@ -42,7 +42,7 @@ function ManagePosko() {
         time_close: '',
         food_total: 1,
         info_booth: 'infoBooth',
-        status: 'close',
+        status: 'open',
         description: 'description',
         number_phone: ''
     });

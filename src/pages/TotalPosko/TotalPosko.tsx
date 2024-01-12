@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Layout from "../../Layout/Layout"
 import Card from "../../components/Elements/Card/Card"
 import ColumnTable from "../../components/Elements/ColumTable/ColumnTable"
@@ -6,13 +6,23 @@ import Search from "../../components/Elements/Search/Search"
 import TitlePage from "../../components/Elements/TitlePage/TitlePage"
 import Table from "../../components/Fragments/Table/Table"
 import { DashPosko } from "../../image"
-import { columnTablePosko, dataPosko } from "../../utils/DataObject"
+import { columnTablePosko } from "../../utils/DataObject"
 import './totalPosko.css'
+import { getAllPosko } from "../../service/managePosko"
 
+interface Posko {
+    id: number
+    name: string;
+    address: string;
+    time_open: string;
+    food_total: number;
+    image: string;
+}
 
 const TotalPosko = () => {
     const [bgTransaction, setBgTransaction] = useState("allBooths");
     const [searchData, setSearchData] = useState("");
+    const [allBooth, setAllBooth] = useState(true);
 
     const handleClick = (transactionType: string) => {
         setBgTransaction(transactionType);
@@ -21,6 +31,29 @@ const TotalPosko = () => {
     const handleSearch = (e: any) => {
         setSearchData(e.target.value);
     };
+
+    const [dataPosko, setDataPosko] = useState<Posko[]>([])
+    useEffect(() => {
+        getAllPosko((data: any) => {
+            setDataPosko(data)
+            console.log('ini', data);
+        })
+    }, []);
+
+    useEffect(() => {
+        if (bgTransaction !== "allBooths") {
+            const reversedData = [...dataPosko].reverse();
+            setDataPosko(reversedData);
+        } else {
+            const sortedData = [...dataPosko].sort((a, b) => a.id - b.id);
+            setDataPosko(sortedData);
+        }
+    }, [bgTransaction]);
+
+
+    const uniqueIds = new Set(dataPosko.map(item => item.id));
+    const totalUniqueIds = uniqueIds.size;
+
     return (
         <Layout>
             <section className="total-posko" id="total-posko">
@@ -30,7 +63,7 @@ const TotalPosko = () => {
                         <div className="d-flex justify-content-between my-auto">
                             <div className="text-start d-flex flex-column align-items-start my-auto">
                                 <span className="text-secondary fw-medium" >Total Posko</span>
-                                <h3 className="fw-semibold " >145</h3>
+                                <h3 className="fw-semibold " >{totalUniqueIds}</h3>
                             </div>
                             <img className="mb-5" src={DashPosko} alt="walet1" />
                         </div>

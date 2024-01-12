@@ -127,7 +127,7 @@ export const data = [
 
 const styleLocationPosko = (rowData: any) => {
     const maxLength = 50
-    const shortText = rowData.location.length > maxLength ? rowData.location.slice(0, maxLength) + "..." : rowData.location
+    const shortText = rowData.address.length > maxLength ? rowData.address.slice(0, maxLength) + "..." : rowData.address
     return (
         <div>
             {shortText}
@@ -141,14 +141,14 @@ const styleStatusPosko = (rowData: any) => {
 
 
     useEffect(() => {
-        { rowData.status === 'Tersedia' ? setChangeItemStatus("changeItemStatusTersedia") : setChangeItemStatus("changeItemStatusTutup") }
+        { rowData.status === 'open' ? setChangeItemStatus("changeItemStatusTersedia") : setChangeItemStatus("changeItemStatusTutup") }
+
     },);
-
-
+    const statusLabel = rowData.status === 'open' ? 'Tersedia' : 'Tutup';
     return (
         <>
             <div style={{ display: "flex", alignItems: "center" }}>
-                <div className={`my-3 ${changeItemStatus}`}>{rowData.status}</div>
+                <div className={`my-3 ${changeItemStatus}`}>{statusLabel}</div>
             </div>
         </>
     );
@@ -158,20 +158,20 @@ const styleStatusPosko = (rowData: any) => {
 export const columnTablePosko = [
 
     {
-        field: "name_booths",
+        field: "name",
         header: 'Nama Posko',
     },
     {
-        field: "total_food",
+        field: "food_total",
         header: "Jumlah Makanan",
     },
     {
-        field: "location",
+        field: "address",
         header: "Lokasi Posko",
         body: styleLocationPosko
     },
     {
-        field: "status",
+        field: " status",
         header: "Status Posko",
         body: styleStatusPosko
     },
