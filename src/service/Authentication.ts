@@ -7,7 +7,7 @@ type login = {
 }
 
 export const login = (formLogin: login, callback: any) => {
-    axios.post(`${url}/api/v1/auth/login`, formLogin)
+    axios.post(`${url}/auth/login`, formLogin)
         .then((res) => {
             callback(true, res.data);
         })

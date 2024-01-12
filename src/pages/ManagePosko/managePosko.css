@@ -44,6 +44,26 @@
     color: #FBEEDC;
 }
 
+.modal .modal-dialog form .btn-cancel {
+    background-color: #FFFF;
+    color: #FF7F0A;
+    border: 1px solid #FF7F0A;
+}
+
+.modal .modal-dialog form .btn-cancel:hover {
+    background-color: #FF7F0A;
+    color: #FFFF;
+}
+
+.modal .modal-dialog form .btn-confirm {
+    background-color: #FF7F0A;
+    color: #FFFF;
+}
+
+.modal .modal-dialog form .btn-confirm:hover {
+    background-color: #FFFF;
+    color: #FF7F0A;
+}
 
 @media screen and (max-width: 1449px) {
     .manage-posko .list-posko .row .col-12 .body-card .information h3 {

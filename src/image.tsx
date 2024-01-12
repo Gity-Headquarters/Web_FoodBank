@@ -16,7 +16,7 @@ import iconPencil from './assets/iconPencil.svg'
 import iconAdmin from './assets/iconAdmin.svg'
 import DashMoney from './assets/DashMoney.svg'
 import DashDonatur from './assets/DashDonatur.svg'
-import DashPosko from './assets/dashPosko.svg'
+import DashPosko from './assets/DashPosko.svg'
 
 
 export {

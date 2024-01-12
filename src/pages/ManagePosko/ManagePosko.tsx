@@ -11,6 +11,7 @@ import { useEffect, useState } from "react"
 import Modal from "../../components/Fragments/Modal/Modal"
 import { defaultImageModal, iconPencil } from "../../image"
 import InputForm from "../../components/Elements/Input/Input"
+import ButtonConfirm from "../../components/Elements/ButtonConfirm/ButtonConfirm"
 
 
 function ManagePosko() {
@@ -23,11 +24,18 @@ function ManagePosko() {
         return () => clearInterval(intervalId);
     }, []);
 
+
     const [formData, setFormData] = useState({
         image: null as File | null,
-        nameBooth: '',
-        location: '',
-        time: ''
+        name: '',
+        address: '',
+        time_open: ``,
+        time_close: '',
+        food_total: 10,
+        info_booth: 'infoBooth',
+        status: 'close',
+        description: 'description',
+        number_phone: ''
     });
 
     const handleFileManager = () => {
@@ -42,10 +50,11 @@ function ManagePosko() {
         setFormData({ ...formData, image: selectedImage || null });
     };
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: any) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
+
 
     console.log(formData);
 
@@ -107,7 +116,24 @@ function ManagePosko() {
                                 </button>
                             </div>
                         </div>
-                        <InputForm onChange={handleChange} htmlFor="nameBooth" value={formData.nameBooth} title="Masukan Nama Booth" type="text" />
+                        <InputForm onChange={handleChange} htmlFor="name" value={formData.name} title="Masukan Nama Booth" type="text" />
+                        <InputForm onChange={handleChange} htmlFor="number_phone" value={formData.number_phone} title="Masukan Nomor Handphone" type="number" />
+                        <div className="d-flex justify-content-between gap-3">
+                            <InputForm onChange={handleChange} htmlFor="time_open" value={formData.time_open} title="Masukan Jam Buka" type="text" />
+                            <InputForm onChange={handleChange} htmlFor="time_close" value={formData.time_close} title="Masukan Jam Tutup" type="text" />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="address" className="form-label">Masukan Lokasi</label>
+                            <textarea className="form-control" value={formData.address} name="address" onChange={handleChange} style={{ height: 100 }}></textarea>
+                        </div>
+                        <div className="d-flex justify-content-end gap-3">
+                            <ButtonCancel >
+                                Batal
+                            </ButtonCancel>
+                            <ButtonConfirm>
+                                Simpan
+                            </ButtonConfirm>
+                        </div>
                     </form>
                 </Modal>
 
