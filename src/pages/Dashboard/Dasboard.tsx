@@ -8,7 +8,6 @@ import { CardDashboard } from "../../utils/DataObject"
 import { useEffect, useRef, useState } from "react";
 import Chart from "chart.js/auto";
 import DashboardLoader from "../../components/Loader/DashboardLoader/DashcardLoader"
-import { useLogin } from "../../hooks/useLogin"
 
 function Dasboard() {
     useEffect(() => {
