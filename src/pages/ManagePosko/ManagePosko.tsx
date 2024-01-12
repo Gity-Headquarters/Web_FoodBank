@@ -7,7 +7,7 @@ import './managePosko.css'
 import PoskoList from "../../components/Fragments/PoskoList/PoskoList"
 import { managePoskoList } from "../../utils/DataObject"
 import CardPoskoLoader from "../../components/Loader/ManagePoskoLoader/CardPoskoLoader"
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import Modal from "../../components/Fragments/Modal/Modal"
 import { defaultImageModal, iconPencil } from "../../image"
 import InputForm from "../../components/Elements/Input/Input"
@@ -31,7 +31,7 @@ function ManagePosko() {
         address: '',
         time_open: ``,
         time_close: '',
-        food_total: 10,
+        food_total: 1,
         info_booth: 'infoBooth',
         status: 'close',
         description: 'description',
@@ -83,8 +83,8 @@ function ManagePosko() {
                     <div className="row">
                         {loading ? <CardPoskoLoader numberOfCards={8} />
                             : managePoskoList.map((item, index) => (
-                                <>
-                                    <PoskoList title={item.title} location={item.location} time={item.time} key={index} totalFoods={item.totalFoods} image={item.image} />
+                                <React.Fragment key={index}>
+                                    <PoskoList title={item.title} location={item.location} time={item.time} totalFoods={item.totalFoods} image={item.image} />
                                     <Modal id={"modal-update"}>
                                         <div className="d-flex justify-content-between p-3 text-black fw-semibold">
                                             <h5>Update Posko</h5>
@@ -131,7 +131,7 @@ function ManagePosko() {
                                             </div>
                                         </form>
                                     </Modal>
-                                </>
+                                </React.Fragment>
                             ))
                         }
                     </div>
