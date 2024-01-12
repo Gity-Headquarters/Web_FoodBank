@@ -83,7 +83,55 @@ function ManagePosko() {
                     <div className="row">
                         {loading ? <CardPoskoLoader numberOfCards={8} />
                             : managePoskoList.map((item, index) => (
-                                <PoskoList title={item.title} location={item.location} time={item.time} key={index} totalFoods={item.totalFoods} image={item.image} />
+                                <>
+                                    <PoskoList title={item.title} location={item.location} time={item.time} key={index} totalFoods={item.totalFoods} image={item.image} />
+                                    <Modal id={"modal-update"}>
+                                        <div className="d-flex justify-content-between p-3 text-black fw-semibold">
+                                            <h5>Update Posko</h5>
+                                            <button className="btn-close border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close" />
+                                        </div>
+                                        <form className="p-4">
+                                            <div className="position-relative mx-auto mb-4">
+                                                <div className="image d-flex justify-content-center ">
+                                                    {formData.image && formData.image instanceof Blob ? (
+                                                        <img src={URL.createObjectURL(formData.image)} />
+                                                    ) : (
+                                                        <img src={defaultImageModal} />
+                                                    )}
+
+                                                    <input
+                                                        type="file"
+                                                        className="d-none"
+                                                        id="imageInput"
+                                                        onChange={handleImageChange}
+                                                    />
+
+                                                    <button className="btn btn-input border-0 p-0 position-absolute bottom-0 end-0" type="button" >
+                                                        <img src={iconPencil} onClick={handleFileManager} />
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <InputForm onChange={handleChange} htmlFor="name" value={formData.name} title="Masukan Nama Booth" type="text" />
+                                            <InputForm onChange={handleChange} htmlFor="number_phone" value={formData.number_phone} title="Masukan Nomor Handphone" type="number" />
+                                            <div className="d-flex justify-content-between gap-3">
+                                                <InputForm onChange={handleChange} htmlFor="time_open" value={formData.time_open} title="Masukan Jam Buka" type="text" />
+                                                <InputForm onChange={handleChange} htmlFor="time_close" value={formData.time_close} title="Masukan Jam Tutup" type="text" />
+                                            </div>
+                                            <div className="mb-3">
+                                                <label htmlFor="address" className="form-label">Masukan Lokasi</label>
+                                                <textarea className="form-control" value={formData.address} name="address" onChange={handleChange} style={{ height: 100 }}></textarea>
+                                            </div>
+                                            <div className="d-flex justify-content-end gap-3">
+                                                <ButtonCancel >
+                                                    Batal
+                                                </ButtonCancel>
+                                                <ButtonConfirm>
+                                                    Simpan
+                                                </ButtonConfirm>
+                                            </div>
+                                        </form>
+                                    </Modal>
+                                </>
                             ))
                         }
                     </div>

@@ -5,7 +5,7 @@ import InputForm from '../../components/Elements/Input/Input'
 import { login } from '../../service/Authentication'
 import { FaEyeSlash } from "react-icons/fa6";
 import { IoEye } from "react-icons/io5";
-
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
 
@@ -16,6 +16,7 @@ function Login() {
         meta: {
             status: string;
         };
+        token: string
     };
 
     const [buttonLogin, setButtonLogin] = useState(false)
@@ -39,7 +40,7 @@ function Login() {
             [name]: value,
         };
 
-        if (updatedValues.email !== "" && updatedValues.password !== "" && updatedValues.email.includes('@gmail.com')) {
+        if (updatedValues.email !== "" && updatedValues.password !== "" && updatedValues.email.includes('@test.com') || updatedValues.email.includes('@gmail.com')) {
             setButtonLogin(true);
             setDisabled(false);
         } else {
@@ -48,22 +49,20 @@ function Login() {
         }
     }
 
-
+    const navigate = useNavigate();
     const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
-
         e.preventDefault();
         login(formData, (status: boolean, res: LoginResponse) => {
             if (status) {
-                console.log(res.data);
-                localStorage.setItem("token", res.data.token);
+                console.log(res);
+                localStorage.setItem("token", res.token);
+                navigate("/dashboard");
             } else {
                 console.log(res);
                 setErrorMsg("d-block")
             }
         });
     };
-
-    console.log(formData);
 
     const togglePassword = () => {
         setShowPassword(!showPassword);

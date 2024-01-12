@@ -65,6 +65,10 @@
     color: #FF7F0A;
 }
 
+.list-posko .row .col-12 .body-card .information .time .btn-confirm {
+    background-color: #f19109;
+}
+
 @media screen and (max-width: 1449px) {
     .manage-posko .list-posko .row .col-12 .body-card .information h3 {
         font-size: 19px;
