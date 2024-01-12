@@ -8,8 +8,10 @@ import { CardDashboard } from "../../utils/DataObject"
 import { useEffect, useRef, useState } from "react";
 import Chart from "chart.js/auto";
 import DashboardLoader from "../../components/Loader/DashboardLoader/DashcardLoader"
+import { useLogin } from "../../hooks/useLogin"
 
 function Dasboard() {
+    useLogin()
     useEffect(() => {
         const ctx = chartRef.current?.getContext("2d");
 
@@ -170,6 +172,8 @@ function Dasboard() {
 
     }, []);
 
+
+
     const chartRef = useRef<HTMLCanvasElement | null>(null);
     const chartInstanceRef = useRef<Chart<"line"> | null>(null);
     const donutChartRef = useRef<HTMLCanvasElement | null>(null);
@@ -182,7 +186,6 @@ function Dasboard() {
         }, 1000);
         return () => clearInterval(intervalId);
     }, []);
-
     return (
         <Layout>
             <section className="dashboard" id="dashboard">

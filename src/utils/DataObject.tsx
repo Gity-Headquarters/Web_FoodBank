@@ -158,8 +158,8 @@ const styleStatusPosko = (rowData: any) => {
 export const columnTablePosko = [
 
     {
-        field: "id_posko",
-        header: 'ID',
+        field: "name_booths",
+        header: 'Nama Posko',
     },
     {
         field: "total_food",
@@ -167,7 +167,7 @@ export const columnTablePosko = [
     },
     {
         field: "location",
-        header: "Location",
+        header: "Lokasi Posko",
         body: styleLocationPosko
     },
     {
@@ -181,73 +181,73 @@ export const columnTablePosko = [
 
 export const dataPosko = [
     {
-        id_posko: 123456789,
+        name_booths: 123456789,
         total_food: "10",
         location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan kota",
         status: "Tersedia",
     },
     {
-        id_posko: 123456789,
+        name_booths: 123456789,
         total_food: "10",
         location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan kampung",
         status: "Tersedia",
     },
     {
-        id_posko: 123456789,
+        name_booths: 123456789,
         total_food: "10",
         location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan ",
         status: "Tersedia",
     },
     {
-        id_posko: 123456789,
+        name_booths: 123456789,
         total_food: "10",
         location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai",
         status: "Tutup",
     },
     {
-        id_posko: 123456789,
+        name_booths: 123456789,
         total_food: "10",
         location: "Jakarta,Jl. Melati 5, RT.3/RW.1",
         status: "Tutup",
     },
     {
-        id_posko: 123456789,
+        name_booths: 123456789,
         total_food: "10",
         location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan",
         status: "Tutup",
     },
     {
-        id_posko: 123456789,
+        name_booths: 123456789,
         total_food: "10",
         location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan",
         status: "Tutup",
     },
     {
-        id_posko: 123456789,
+        name_booths: 123456789,
         total_food: "10",
         location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan",
         status: "Tutup",
     },
     {
-        id_posko: 123456789,
+        name_booths: 123456789,
         total_food: "10",
         location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan",
         status: "Tutup",
     },
     {
-        id_posko: 123456789,
+        name_booths: 123456789,
         total_food: "10",
         location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan",
         status: "Tutup",
     },
     {
-        id_posko: 123456789,
+        name_booths: 123456789,
         total_food: "10",
         location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan",
         status: "Tutup",
     },
     {
-        id_posko: 123456789,
+        name_booths: 123456789,
         total_food: "10",
         location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan",
         status: "Tutup",
