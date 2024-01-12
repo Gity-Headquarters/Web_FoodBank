@@ -11,7 +11,6 @@ import DashboardLoader from "../../components/Loader/DashboardLoader/DashcardLoa
 import { useLogin } from "../../hooks/useLogin"
 
 function Dasboard() {
-    useLogin()
     useEffect(() => {
         const ctx = chartRef.current?.getContext("2d");
 

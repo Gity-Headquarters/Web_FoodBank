@@ -9,8 +9,16 @@ import './layout.css'
 import ButtonCancel from "../components/Elements/ButtonCancel/ButtonCancel";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { SiHomeadvisor } from "react-icons/si";
+import { useNavigate } from "react-router-dom";
 
 function Layout({ children }: any) {
+    const navigate = useNavigate()
+
+    const handleLogout = () => {
+        localStorage.removeItem('token')
+        navigate('/')
+    }
+
     return (
         <div className="layout d-flex ">
             <div className="sidebar">
@@ -43,7 +51,7 @@ function Layout({ children }: any) {
                                 location="/Manage-posko"
                             />
                             <hr />
-                            <ButtonCancel className="btn-logout d-flex justify-content-center">
+                            <ButtonCancel onclick={handleLogout} className="btn-logout d-flex justify-content-center">
                                 <FaArrowCircleLeft />
                                 <span className="fw-medium" >Logout</span>
                             </ButtonCancel>

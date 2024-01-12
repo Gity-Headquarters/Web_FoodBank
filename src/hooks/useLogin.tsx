@@ -4,15 +4,18 @@ import { useNavigate } from "react-router-dom";
 
 export const useLogin = () => {
     const navigate = useNavigate();
-    const token = localStorage.getItem('token');
-    const decoded: any = jwtDecode(token || '');
-    const role = decoded.role;
     useEffect(() => {
-        if (role !== 'admin') {
+        const token = localStorage.getItem('token');
+        if (!token) {
             navigate('/');
+            return;
+        }
+        const decoded: any = jwtDecode(token || '');
+        const role = decoded.role;
+        if (role === 'admin') {
+            navigate('/dashboard');
         } else {
-            navigate('/dashboard')
+            navigate('/');
         }
     }, []);
-
 };
