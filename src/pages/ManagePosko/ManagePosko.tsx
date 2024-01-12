@@ -5,26 +5,32 @@ import Card from "../../components/Elements/Card/Card"
 import TitlePage from "../../components/Elements/TitlePage/TitlePage"
 import './managePosko.css'
 import PoskoList from "../../components/Fragments/PoskoList/PoskoList"
-import { managePoskoList } from "../../utils/DataObject"
 import CardPoskoLoader from "../../components/Loader/ManagePoskoLoader/CardPoskoLoader"
 import React, { useEffect, useState } from "react"
 import Modal from "../../components/Fragments/Modal/Modal"
 import { defaultImageModal, iconPencil } from "../../image"
 import InputForm from "../../components/Elements/Input/Input"
 import ButtonConfirm from "../../components/Elements/ButtonConfirm/ButtonConfirm"
-import { createBooth } from "../../service/managePosko"
+import { createBooth, getAllPosko } from "../../service/managePosko"
 import toast from "react-hot-toast";
 import { Toaster } from "react-hot-toast";
 
+interface Posko {
+    name: string;
+    address: string;
+    time_open: string;
+    food_total: number;
+    image: string;
+}
 
 function ManagePosko() {
     const [loading, setLoading] = useState(true);
-
+    const [dataPosko, setDataPosko] = useState<Posko[]>([])
     useEffect(() => {
-        const intervalId = setInterval(() => {
-            setLoading(false);
-        }, 1000);
-        return () => clearInterval(intervalId);
+        getAllPosko((data: any) => {
+            setDataPosko(data)
+            setLoading(false)
+        })
     }, []);
 
 
@@ -90,6 +96,10 @@ function ManagePosko() {
                     number_phone: ''
                 })
                 addPosko();
+                getAllPosko((data: any) => {
+                    setDataPosko(data)
+                    setLoading(false)
+                })
             } else {
                 console.log(res);
                 errorPosko();
@@ -141,6 +151,8 @@ function ManagePosko() {
     //         },
     //     });
 
+
+
     return (
         <Layout>
             <section className="manage-posko position-relative" id="manage-posko">
@@ -164,9 +176,9 @@ function ManagePosko() {
                 <section className="list-posko mt-4 mb-4" >
                     <div className="row">
                         {loading ? <CardPoskoLoader numberOfCards={8} />
-                            : managePoskoList.map((item, index) => (
+                            : dataPosko.map((item, index) => (
                                 <React.Fragment key={index}>
-                                    <PoskoList title={item.title} location={item.location} time={item.time} totalFoods={item.totalFoods} image={item.image} />
+                                    <PoskoList name={item.name} address={item.address} time_open={item.time_open} food_total={item.food_total} image={item.image} />
                                     <Modal id={"modal-update"}>
                                         <div className="d-flex justify-content-between p-3 text-black fw-semibold">
                                             <h5>Update Posko</h5>
@@ -196,7 +208,7 @@ function ManagePosko() {
                                             <InputForm onChange={handleChange} htmlFor="name" value={formData.name} title="Masukan Nama Booth" type="text" />
                                             <InputForm onChange={handleChange} htmlFor="number_phone" value={formData.number_phone} title="Masukan Nomor Handphone" type="number" />
                                             <div className="d-flex justify-content-between gap-3">
-                                                <InputForm onChange={handleChange} htmlFor="time_open" value={formData.time_open} title="Masukan Jam Buka" type="text" />
+                                                <InputForm onChange={handleChange} htmlFor="timeOpen_open" value={formData.time_open} title="Masukan Jam Buka" type="text" />
                                                 <InputForm onChange={handleChange} htmlFor="time_close" value={formData.time_close} title="Masukan Jam Tutup" type="text" />
                                             </div>
                                             <div className="mb-3">

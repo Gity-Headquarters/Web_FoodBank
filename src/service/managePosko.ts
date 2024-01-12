@@ -16,4 +16,15 @@ export const createBooth = async (data: any, callback: any) => {
             console.log(err);
             callback(false, err.message);
         });
-} 
+}
+
+export const getAllPosko = (callback: any) => {
+    axios.get(`${url}/booth`)
+        .then((res) => {
+            callback(res.data.data);
+        })
+        .catch((err) => {
+            console.log(err);
+
+        })
+}
