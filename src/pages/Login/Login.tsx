@@ -2,10 +2,10 @@ import { useState } from 'react'
 import './login.css'
 import { logoLogin } from '../../image'
 import InputForm from '../../components/Elements/Input/Input'
-import { login } from '../../service/authentication'
 import { FaEyeSlash } from "react-icons/fa6";
 import { IoEye } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom'
+import { login } from '../../service/authentication'
 
 function Login() {
 

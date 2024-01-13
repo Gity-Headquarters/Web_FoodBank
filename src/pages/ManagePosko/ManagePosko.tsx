@@ -40,7 +40,7 @@ function ManagePosko() {
         address: '',
         time_open: ``,
         time_close: '',
-        food_total: 1,
+        food_total: 0,
         info_booth: 'infoBooth',
         status: 'open',
         description: 'description',
