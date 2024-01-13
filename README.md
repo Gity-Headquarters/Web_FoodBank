@@ -1,4 +1,4 @@
-<img align="center" src="./src/assets/sidebar-logo.svg"  width="100%" alt ="FoodBank">
+<img align="center" src="./src/assets/sidebar-logo.svg"  width="100%" height= "140"  alt ="FoodBank">
 
 <h1 align="center">Admin FoodBank</h1>
 
