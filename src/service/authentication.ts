@@ -6,7 +6,8 @@ type login = {
     password: string
 }
 
-export const login = (formLogin: login, callback: any) => {
+
+export const authLogin = (formLogin: login, callback: any) => {
     axios.post(`${url}/auth/login`, formLogin)
         .then((res) => {
             callback(true, res.data);
@@ -15,5 +16,3 @@ export const login = (formLogin: login, callback: any) => {
             callback(false, err);
         });
 };
-
-

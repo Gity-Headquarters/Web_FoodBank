@@ -5,7 +5,7 @@ import InputForm from '../../components/Elements/Input/Input'
 import { FaEyeSlash } from "react-icons/fa6";
 import { IoEye } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom'
-import { login } from '../../service/authentication'
+import { authLogin } from '../../service/authentication';
 
 function Login() {
 
@@ -52,7 +52,7 @@ function Login() {
     const navigate = useNavigate();
     const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        login(formData, (status: boolean, res: LoginResponse) => {
+        authLogin(formData, (status: boolean, res: LoginResponse) => {
             if (status) {
                 console.log(res);
                 localStorage.setItem("token", res.token);
