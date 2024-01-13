@@ -8,7 +8,7 @@ import Table from "../../components/Fragments/Table/Table"
 import { DashPosko } from "../../image"
 import { columnTablePosko, empetyDataTable } from "../../utils/DataObject"
 import './totalPosko.css'
-import { getAllPosko } from "../../service/managePosko"
+import { getAllPosko } from "../../Service/managePosko"
 
 interface Posko {
     id: number

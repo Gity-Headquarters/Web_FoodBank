@@ -11,7 +11,7 @@ import Modal from "../../components/Fragments/Modal/Modal"
 import { defaultImageModal, iconPencil } from "../../image"
 import InputForm from "../../components/Elements/Input/Input"
 import ButtonConfirm from "../../components/Elements/ButtonConfirm/ButtonConfirm"
-import { createBooth, getAllPosko } from "../../service/managePosko"
+import { createBooth, getAllPosko } from "../../Service/managePosko"
 import toast from "react-hot-toast";
 import { Toaster } from "react-hot-toast";
 
