@@ -31,10 +31,10 @@ const TotalPosko = () => {
 
     const [dataPosko, setDataPosko] = useState<Posko[]>([])
     useEffect(() => {
-        getAllPosko((data: any) => {
-            setDataPosko(data)
+        getAllPosko((data: Posko[]) => {
+            setDataPosko(data || []); // Pastikan data tidak null atau undefined
             console.log('ini', data);
-        })
+        });
     }, []);
 
     useEffect(() => {
@@ -55,9 +55,9 @@ const TotalPosko = () => {
         setSearchData(e.target.value);
     };
 
-    const filteredData = dataPosko.filter((item) => {
-        return item.name.toLowerCase().includes(searchData.toLowerCase());
-    });
+    const filteredData = dataPosko ? dataPosko.filter((item) => {
+        return item.name && item.name.toLowerCase().includes(searchData.toLowerCase());
+    }) : [];
 
 
     return (
