@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { DashDonatur, DashMoney, DashPosko, human1, human2, human3, human4, peopleIcon, poskoImage, searchFailed } from "../image";
+import { DashDonatur, DashMoney, iconPosko, human1, human2, human3, human4, peopleIcon, poskoImage, searchFailed } from "../image";
 
 export const CardDashboard = [
     {
@@ -12,7 +12,7 @@ export const CardDashboard = [
     {
         title: 'Total Posko',
         total: '145',
-        icon: DashPosko,
+        icon: iconPosko,
         percentase: 10,
         raising: 'down',
         location: '/total-posko'

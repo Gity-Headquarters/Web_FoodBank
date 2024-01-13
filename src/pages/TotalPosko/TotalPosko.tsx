@@ -5,7 +5,7 @@ import ColumnTable from "../../components/Elements/ColumTable/ColumnTable"
 import Search from "../../components/Elements/Search/Search"
 import TitlePage from "../../components/Elements/TitlePage/TitlePage"
 import Table from "../../components/Fragments/Table/Table"
-import { DashPosko } from "../../image"
+import { iconPosko } from "../../image"
 import { columnTablePosko, empetyDataTable } from "../../utils/DataObject"
 import './totalPosko.css'
 import { getAllPosko } from "../../service/managePosko"
@@ -71,7 +71,7 @@ const TotalPosko = () => {
                                 <span className="text-secondary fw-medium" >Total Posko</span>
                                 <h3 className="fw-semibold " >{totalUniqueIds}</h3>
                             </div>
-                            <img className="mb-5" src={DashPosko} alt="walet1" />
+                            <img className="mb-5" src={iconPosko} alt="walet1" />
                         </div>
                     </Card>
                 </section>
