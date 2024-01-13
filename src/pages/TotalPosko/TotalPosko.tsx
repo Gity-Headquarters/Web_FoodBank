@@ -22,15 +22,12 @@ interface Posko {
 const TotalPosko = () => {
     const [bgTransaction, setBgTransaction] = useState("allBooths");
     const [searchData, setSearchData] = useState("");
-    const [allBooth, setAllBooth] = useState(true);
 
     const handleClick = (transactionType: string) => {
         setBgTransaction(transactionType);
     };
 
-    const handleSearch = (e: any) => {
-        setSearchData(e.target.value);
-    };
+
 
     const [dataPosko, setDataPosko] = useState<Posko[]>([])
     useEffect(() => {
@@ -53,6 +50,15 @@ const TotalPosko = () => {
 
     const uniqueIds = new Set(dataPosko.map(item => item.id));
     const totalUniqueIds = uniqueIds.size;
+
+    const handleSearch = (e: any) => {
+        setSearchData(e.target.value);
+    };
+
+    const filteredData = dataPosko.filter((item) => {
+        return item.name.toLowerCase().includes(searchData.toLowerCase());
+    });
+
 
     return (
         <Layout>
@@ -93,7 +99,7 @@ const TotalPosko = () => {
                                 />
                             </div>
                         </div>
-                        <Table value={dataPosko}  >
+                        <Table value={dataPosko ? filteredData : []}  >
                             {columnTablePosko.map((item, index) => (
                                 <ColumnTable key={index} field={item.field} header={item.header} body={item.body} />
                             ))}
