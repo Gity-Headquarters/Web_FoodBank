@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { DashDonatur, DashMoney, DashPosko, human1, human2, human3, human4, peopleIcon, poskoImage } from "../image";
+import { DashDonatur, DashMoney, DashPosko, human1, human2, human3, human4, peopleIcon, poskoImage, searchFailed } from "../image";
 
 export const CardDashboard = [
     {
@@ -301,3 +301,16 @@ export const managePoskoList = [
         image: poskoImage
     },
 ]
+
+export const empetyDataTable = () => {
+    return (
+        <div className="d-grid justify-content-center">
+            <div className="w-100 d-grid justify-content-center mx-auto">
+                <img className="mx-auto" src={searchFailed} alt="" />
+                <div className="text-justify mt-4">
+                    <h3 className="text-black fw-semibold" >Maaf, Pencarian tidak dapat ditemukan</h3>
+                </div>
+            </div>
+        </div>
+    );
+}

@@ -6,7 +6,7 @@ import Search from "../../components/Elements/Search/Search"
 import TitlePage from "../../components/Elements/TitlePage/TitlePage"
 import Table from "../../components/Fragments/Table/Table"
 import { DashPosko } from "../../image"
-import { columnTablePosko } from "../../utils/DataObject"
+import { columnTablePosko, empetyDataTable } from "../../utils/DataObject"
 import './totalPosko.css'
 import { getAllPosko } from "../../service/managePosko"
 
@@ -99,7 +99,7 @@ const TotalPosko = () => {
                                 />
                             </div>
                         </div>
-                        <Table value={dataPosko ? filteredData : []}  >
+                        <Table value={dataPosko ? filteredData : []} emptyMessage={empetyDataTable}>
                             {columnTablePosko.map((item, index) => (
                                 <ColumnTable key={index} field={item.field} header={item.header} body={item.body} />
                             ))}
