@@ -32,10 +32,13 @@ const TotalPosko = () => {
     const [dataPosko, setDataPosko] = useState<Posko[]>([])
     useEffect(() => {
         getAllPosko((data: Posko[]) => {
-            setDataPosko(data || []); // Pastikan data tidak null atau undefined
+            setDataPosko(data); // Pastikan data tidak null atau undefined
             console.log('ini', data);
         });
     }, []);
+
+    console.log(dataPosko);
+
 
     useEffect(() => {
         if (bgTransaction !== "allBooths") {
