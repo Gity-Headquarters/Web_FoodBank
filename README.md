@@ -1,5 +1,5 @@
 <h1 align="center">Admin FoodBank</h1>
-<img align="center" src="./src/assets/sidebar-logo.svg"  width="480" alt ="FoodBank>
+<img align="center" src="./src/assets/sidebar-logo.svg"  width="480" alt ="FoodBank">
 
 
 ## Deskripsi Project
