@@ -111,10 +111,12 @@ function ManagePosko() {
                     const openPosko = data.filter(posko => posko.status === 'open');
                     setDataPosko(openPosko);
                     setLoading(false);
-                });
 
+                });
+                addFood()
             } else {
                 console.log(res);
+                error()
             }
         })
     }
@@ -158,7 +160,7 @@ function ManagePosko() {
                 });
             } else {
                 console.log(res);
-                errorPosko();
+                error();
             }
         })
 
@@ -176,9 +178,9 @@ function ManagePosko() {
             },
         });
 
-    const errorPosko = () =>
+    const error = () =>
         toast.error(
-            "Posko gagal ditambah tolong periksa dan masukan data yang sesuai ",
+            "Error, tolong periksa dan masukan data yang sesuai ",
             {
                 duration: 4000,
                 position: 'bottom-center',
@@ -191,6 +193,22 @@ function ManagePosko() {
                 },
             }
         );
+
+    const addFood = () =>
+        toast.success("Makanan berhasil di tambahkan ✨🚀", {
+            duration: 4000,
+            position: 'bottom-center',
+            className: "custom-toast ",
+
+            // Aria
+            ariaProps: {
+                role: "status",
+                "aria-live": "polite",
+            },
+        });
+
+
+
 
     // const updateKonseling = () =>
     //     toast.success("Paket konseling berhasil update ✨🚀", {
