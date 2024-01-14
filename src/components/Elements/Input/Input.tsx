@@ -8,12 +8,13 @@ type Props = {
     value: string
     placeholder?: string,
     className?: string
+    styleTitle?: string
 }
 
-function InputForm({ htmlFor, title, type, onChange, value, placeholder, className }: Props) {
+function InputForm({ htmlFor, title, type, onChange, value, placeholder, className, styleTitle }: Props) {
     return (
         <div className={`mb-3 ${className}`} >
-            <label htmlFor={htmlFor} className="form-label ">
+            <label htmlFor={htmlFor} className={`form-label ${styleTitle}`}>
                 {title}
             </label>
             <input

@@ -75,6 +75,19 @@
     min-width: 50vw;
 }
 
+.manage-posko .modal input {
+    border: 1px solid #CBCBCB;
+}
+
+.manage-posko .modal select {
+    border: 1px solid #FF7F0A;
+    color: #FF7F0A;
+    cursor: pointer;
+}
+
+
+/* modal end*/
+
 @media screen and (max-width: 1449px) {
     .manage-posko .list-posko .row .col-12 .body-card .information h3 {
         font-size: 19px;

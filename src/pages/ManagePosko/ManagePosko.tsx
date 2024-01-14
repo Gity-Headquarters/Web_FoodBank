@@ -330,14 +330,14 @@ function ManagePosko() {
                                 </button>
                             </div>
                         </div>
-                        <InputForm onChange={handleChange} htmlFor="name" value={formData.name} title="Masukan Nama Booth" type="text" />
-                        <InputForm onChange={handleChange} htmlFor="number_phone" value={formData.number_phone} title="Masukan Nomor Handphone" type="number" />
+                        <InputForm styleTitle="text-black fw-semibold" onChange={handleChange} htmlFor="name" value={formData.name} title="Masukan Nama Booth" type="text" />
+                        <InputForm styleTitle="text-black fw-semibold" onChange={handleChange} htmlFor="number_phone" value={formData.number_phone} title="Masukan Nomor Handphone" type="number" />
                         <div className="d-flex justify-content-between gap-3">
-                            <InputForm onChange={handleChange} htmlFor="time_open" value={formData.time_open} title="Masukan Jam Buka" type="text" />
-                            <InputForm onChange={handleChange} htmlFor="time_close" value={formData.time_close} title="Masukan Jam Tutup" type="text" />
+                            <InputForm styleTitle="text-black fw-semibold" onChange={handleChange} htmlFor="time_open" value={formData.time_open} title="Masukan Jam Buka" type="text" />
+                            <InputForm styleTitle="text-black fw-semibold" onChange={handleChange} htmlFor="time_close" value={formData.time_close} title="Masukan Jam Tutup" type="text" />
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="address" className="form-label">Masukan Lokasi</label>
+                            <label htmlFor="address" className="form-label text-black fw-semibold">Masukan Lokasi</label>
                             <textarea className="form-control" value={formData.address} name="address" onChange={handleChange} style={{ height: 100 }}></textarea>
                         </div>
                         <div className="d-flex justify-content-end gap-3">
@@ -377,9 +377,9 @@ function ManagePosko() {
                                 </button>
                             </div>
                         </div>
-                        <InputForm onChange={handleChange} htmlFor="name" value={formFood.name} title="Nama Makanan" type="text" />
-                        <div className="name-booth mb-3 ">
-                            <label htmlFor="id_booth"> Masukan Nama Posko</label >
+                        <InputForm styleTitle="text-black fw-semibold" onChange={handleChange} htmlFor="name" value={formFood.name} title="Nama Makanan" type="text" />
+                        <div className="name-booth mb-3 text-black fw-semibold">
+                            <label htmlFor="id_booth "> Masukan Nama Posko</label >
                             <select name="id_booth" value={formFood.id_booth} onChange={handleChange} className="form-select w-100 shadow-none mt-2" >
                                 <Option value={''} menu={'Pilih  Posko'} />
                                 {dataPosko.map((item, index) => (
@@ -388,15 +388,15 @@ function ManagePosko() {
                             </select>
                         </div>
 
-                        <div className="type-food mb-3 ">
+                        <div className="type-food mb-3 text-black fw-semibold ">
                             <label htmlFor="jenis">Jenis Makanan</label >
-                            <select name="jenis" value={formFood.jenis} onChange={handleChange} className="form-select w-100 shadow-none mt-2" >
+                            <select name="jenis" value={formFood.jenis} onChange={handleChange} className="form-select  w-100 shadow-none mt-2 " >
                                 {dataInputJenisMakanan.map((item, index) => (
                                     <Option key={index} value={item.value} menu={item.menu} />
                                 ))}
                             </select>
                         </div>
-                        <InputForm onChange={handleChange} htmlFor="jumlah" value={formFood.jumlah} title="Jumlah Makanan" type="number" />
+                        <InputForm onChange={handleChange} styleTitle="text-black fw-semibold " htmlFor="jumlah" value={formFood.jumlah} title="Jumlah Makanan" type="number" />
                         <div className="d-flex justify-content-end gap-3">
                             <ButtonCancel >
                                 Batal

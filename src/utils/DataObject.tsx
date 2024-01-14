@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { DashDonatur, DashMoney, iconPosko, human1, human2, human3, human4, peopleIcon, poskoImage, searchFailed } from "../image";
+import { DashDonatur, DashMoney, iconPosko, human1, human2, human3, human4, peopleIcon, searchFailed } from "../image";
 
 export const CardDashboard = [
     {
