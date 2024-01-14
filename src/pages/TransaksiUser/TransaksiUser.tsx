@@ -4,11 +4,10 @@ import Card from "../../components/Elements/Card/Card"
 import TitlePage from "../../components/Elements/TitlePage/TitlePage"
 import { transaksiUser } from "../../image"
 import './transaksiUser.css'
-import { getAllPosko } from "../../service/managePosko"
 import Search from "../../components/Elements/Search/Search"
 import Table from "../../components/Fragments/Table/Table"
 import ColumnTable from "../../components/Elements/ColumTable/ColumnTable"
-import { columnTablePosko, columnTableTransaksiUser, empetyDataTable } from "../../utils/DataObject"
+import { columnTableTransaksiUser, empetyDataTable } from "../../utils/DataObject"
 import { getAllTransaction } from "../../service/transactionUser"
 
 interface Transaksi {
@@ -16,6 +15,10 @@ interface Transaksi {
     guid: string;
     booth_id: string;
     status: string;
+    name: string
+    User: {
+        username: string
+    }
 
 }
 
@@ -54,9 +57,11 @@ const TransaksiUser = () => {
         setSearchData(e.target.value);
     };
 
-    // const filteredData = dataPosko ? dataPosko.filter((item) => {
-    //     return item.name && item.name.toLowerCase().includes(searchData.toLowerCase());
-    // }) : [];
+    const filteredData = transaction ? transaction.filter((item) => {
+        return item.User.username && item.User.username.toLowerCase().includes(searchData.toLowerCase());
+    }) : [];
+
+    console.log(filteredData);
 
     return (
         <Layout>
@@ -97,7 +102,7 @@ const TransaksiUser = () => {
                             />
                         </div>
                     </div>
-                    <Table value={transaction} emptyMessage={empetyDataTable}>
+                    <Table value={transaction ? filteredData : []} emptyMessage={empetyDataTable}>
                         {columnTableTransaksiUser.map((item, index) => (
                             <ColumnTable key={index} field={item.field} header={item.header} body={item.body} />
                         ))}
