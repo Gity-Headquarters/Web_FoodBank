@@ -51,7 +51,8 @@ const TransaksiUser = () => {
 
     console.log(transaction);
 
-
+    const uniqueIds = new Set(transaction.map(item => item.id));
+    const totalUniqueIds = uniqueIds.size;
 
     const handleSearch = (e: any) => {
         setSearchData(e.target.value);
@@ -72,7 +73,7 @@ const TransaksiUser = () => {
                         <div className="d-flex justify-content-between my-auto">
                             <div className="text-start d-flex flex-column align-items-start my-auto">
                                 <span className="text-secondary fw-medium" >Total Transaksi User</span>
-                                <h3 className="fw-semibold " >120</h3>
+                                <h3 className="fw-semibold " >{totalUniqueIds}</h3>
                             </div>
                             <img className="mb-5" src={transaksiUser} alt="user" />
                         </div>
