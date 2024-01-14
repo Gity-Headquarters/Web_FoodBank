@@ -208,6 +208,29 @@ function ManagePosko() {
         });
 
 
+    const deleleteState = () => {
+        setFormData({
+            image: null as File | null,
+            name: '',
+            address: '',
+            time_open: ``,
+            time_close: '',
+            food_total: 1,
+            info_booth: 'infoBooth',
+            status: 'close',
+            description: 'description',
+            number_phone: ''
+        })
+
+        setFormFood({
+            name: '',
+            jenis: '',
+            jumlah: '',
+            id_booth: '',
+            image: null as File | null
+        })
+    }
+
 
 
     // const updateKonseling = () =>
@@ -306,7 +329,7 @@ function ManagePosko() {
                 <Modal id={"modal-add"}>
                     <div className="d-flex justify-content-between p-3 text-black fw-semibold">
                         <h5>Tambah Posko</h5>
-                        <button className="btn-close border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close" />
+                        <button className="btn-close border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close" onClick={deleleteState} />
                     </div>
 
                     <form className="p-4" onSubmit={handleCreateBooth}>
@@ -341,7 +364,7 @@ function ManagePosko() {
                             <textarea className="form-control" value={formData.address} name="address" onChange={handleChange} style={{ height: 100 }}></textarea>
                         </div>
                         <div className="d-flex justify-content-end gap-3">
-                            <ButtonCancel >
+                            <ButtonCancel bsDismiss={"modal"} type="button" onclick={deleleteState} >
                                 Batal
                             </ButtonCancel>
                             <ButtonConfirm type="submit" bsDismiss={"modal"}  >
@@ -354,7 +377,7 @@ function ManagePosko() {
                 <Modal id={"modal-add-food"}>
                     <div className="d-flex justify-content-between p-3 text-black fw-semibold">
                         <h5>Tambah Makanan</h5>
-                        <button className="btn-close border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close" />
+                        <button className="btn-close border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close" onClick={deleleteState} />
                     </div>
 
                     <form className="p-4" onSubmit={handleAddFood} >
@@ -398,7 +421,7 @@ function ManagePosko() {
                         </div>
                         <InputForm onChange={handleChange} styleTitle="text-black fw-semibold " htmlFor="jumlah" value={formFood.jumlah} title="Jumlah Makanan" type="number" />
                         <div className="d-flex justify-content-end gap-3">
-                            <ButtonCancel >
+                            <ButtonCancel type="button" onclick={deleleteState} bsDismiss={"modal"} >
                                 Batal
                             </ButtonCancel>
                             <ButtonConfirm type="submit" bsDismiss={"modal"}  >
