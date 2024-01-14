@@ -18,10 +18,11 @@ import DashMoney from './assets/DashMoney.svg'
 import DashDonatur from './assets/DashDonatur.svg'
 import iconPosko from './assets/iconPosko.svg'
 import searchFailed from './assets/searchFailed.svg'
+import transaksiUser from './assets/transaksiUser.svg'
 
 
 export {
     logoLogin, logoSidebar, welcomeAdmin, peopleIcon, wallet1, human1,
     human2, human3, human4, poskoImage, iconFood, iconMap, iconWatch, defaultImageModal, iconPencil, iconAdmin, DashDonatur, DashMoney, iconPosko
-    , searchFailed
+    , searchFailed, transaksiUser
 }

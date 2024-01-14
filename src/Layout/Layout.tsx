@@ -10,6 +10,7 @@ import ButtonCancel from "../components/Elements/ButtonCancel/ButtonCancel";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { SiHomeadvisor } from "react-icons/si";
 import { useNavigate } from "react-router-dom";
+import { BsPersonVcard } from "react-icons/bs";
 
 function Layout({ children }: any) {
     const navigate = useNavigate()
@@ -38,6 +39,11 @@ function Layout({ children }: any) {
                                 icon={<LuWallet />}
                                 title="Dana Admin"
                                 location="/dana-admin"
+                            />
+                            <SidebarItem
+                                icon={<BsPersonVcard />}
+                                title="Transaksi User"
+                                location="/transaksi-user"
                             />
                             <hr />
                             <SidebarItem

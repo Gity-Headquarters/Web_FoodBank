@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { DashDonatur, DashMoney, iconPosko, human1, human2, human3, human4, peopleIcon, searchFailed } from "../image";
+import { Link } from "react-router-dom";
 
 export const CardDashboard = [
     {
@@ -221,4 +222,76 @@ export const dataInputJenisMakanan = [
         value: "kue dan roti",
         menu: "Kue dan Roti"
     }
+]
+
+// transaksi user table 
+
+const styleNameTransaksiUser = (rowData: any) => {
+    return (
+        <Link to={`/${rowData.guid}`} >
+            {rowData.User.username}
+        </Link>
+    )
+}
+
+const styleLocationBooth = (rowData: any) => {
+    return (
+        <>
+            {rowData.Booth.address}
+        </>
+    )
+
+}
+
+const styleStatusUser = (rowData: any) => {
+    const [changeItemStatus, setChangeItemStatus] = useState("");
+    useEffect(() => {
+        if (rowData.status === "accepted") {
+            setChangeItemStatus("changeItemStatusAccepted")
+        } else if (rowData.status === "waiting") {
+            setChangeItemStatus("changeItemStatusWaiting")
+        } else {
+            setChangeItemStatus("changeItemStatusRejected")
+        }
+
+    },);
+
+    let statusLabel;
+
+    if (rowData.status === 'accepted') {
+        statusLabel = 'Selesai';
+    } else if (rowData.status === 'waiting') {
+        statusLabel = 'Menunggu';
+    } else {
+        statusLabel = 'Status Di Tolak';
+    }
+
+    return (
+        <>
+            <div style={{ display: "flex", alignItems: "center" }}>
+                <div className={`my-3 ${changeItemStatus}`}>{statusLabel}</div>
+            </div>
+        </>
+    );
+
+}
+
+export const columnTableTransaksiUser = [
+    {
+        field: "name",
+        header: "Nama",
+        body: styleNameTransaksiUser,
+    },
+    {
+        field: "address",
+        header: "Lokasi Posko",
+        body: styleLocationBooth,
+    },
+
+    {
+        field: "status",
+        header: "Status User",
+        body: styleStatusUser,
+    },
+
 ]

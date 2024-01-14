@@ -1,0 +1,27 @@
+.transaction-user .card-normal h3 {
+    font-size: 52px;
+}
+
+.data-transaction-user .p-datatable-wrapper table tbody .changeItemStatusAccepted {
+    padding: 6px 24px;
+    background-color: #D4F1DD;
+    color: #1B7A37;
+    border-radius: 9px;
+}
+
+.data-transaction-user .p-datatable-wrapper table tbody .changeItemStatusWaiting {
+    padding: 6px 24px;
+    background-color: #FEF7DB;
+    color: #7D6D25;
+    border-radius: 9px;
+}
+
+.data-transaction-user .p-datatable-wrapper table tbody .changeItemStatusRejected {
+    padding: 6px 16px;
+    background-color: #FFDFD7;
+    color: #AA3E24;
+    border-radius: 9px;
+    width: 114px;
+    text-align: center;
+
+}
