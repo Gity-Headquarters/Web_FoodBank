@@ -179,129 +179,6 @@ export const columnTablePosko = [
 ];
 
 
-export const dataPosko = [
-    {
-        name_booths: 123456789,
-        total_food: "10",
-        location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan kota",
-        status: "Tersedia",
-    },
-    {
-        name_booths: 123456789,
-        total_food: "10",
-        location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan kampung",
-        status: "Tersedia",
-    },
-    {
-        name_booths: 123456789,
-        total_food: "10",
-        location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan ",
-        status: "Tersedia",
-    },
-    {
-        name_booths: 123456789,
-        total_food: "10",
-        location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai",
-        status: "Tutup",
-    },
-    {
-        name_booths: 123456789,
-        total_food: "10",
-        location: "Jakarta,Jl. Melati 5, RT.3/RW.1",
-        status: "Tutup",
-    },
-    {
-        name_booths: 123456789,
-        total_food: "10",
-        location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan",
-        status: "Tutup",
-    },
-    {
-        name_booths: 123456789,
-        total_food: "10",
-        location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan",
-        status: "Tutup",
-    },
-    {
-        name_booths: 123456789,
-        total_food: "10",
-        location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan",
-        status: "Tutup",
-    },
-    {
-        name_booths: 123456789,
-        total_food: "10",
-        location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan",
-        status: "Tutup",
-    },
-    {
-        name_booths: 123456789,
-        total_food: "10",
-        location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan",
-        status: "Tutup",
-    },
-    {
-        name_booths: 123456789,
-        total_food: "10",
-        location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan",
-        status: "Tutup",
-    },
-    {
-        name_booths: 123456789,
-        total_food: "10",
-        location: "Jakarta,Jl. Melawai 5, RT.3/RW.1, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan",
-        status: "Tutup",
-    },
-
-]
-
-// posko table end
-
-export const managePoskoList = [
-    {
-        title: 'Food Bank Booth',
-        totalFoods: 400,
-        location: 'Dago, Bandung, Indonesia',
-        time: '12:00 PM',
-        image: poskoImage
-    },
-    {
-        title: 'Food Bank Booth',
-        totalFoods: 400,
-        location: 'Dago, Bandung, Indonesia cek teks panjang',
-        time: '12:00 PM',
-        image: poskoImage
-    },
-    {
-        title: 'Food Bank Booth',
-        totalFoods: 400,
-        location: 'Dago, Bandung, Indonesia',
-        time: '12:00 PM',
-        image: poskoImage
-    },
-    {
-        title: 'Food Bank Booth',
-        totalFoods: 400,
-        location: 'Dago, Bandung, Indonesia',
-        time: '12:00 PM',
-        image: poskoImage
-    },
-    {
-        title: 'Food Bank Booth',
-        totalFoods: 400,
-        location: 'Dago, Bandung, Indonesia cek teks panjang',
-        time: '12:00 PM',
-        image: poskoImage
-    },
-    {
-        title: 'Food Bank Booth',
-        totalFoods: 400,
-        location: 'Dago, Bandung, Indonesia',
-        time: '12:00 PM',
-        image: poskoImage
-    },
-]
-
 export const empetyDataTable = () => {
     return (
         <div className="d-grid justify-content-center">
@@ -314,3 +191,34 @@ export const empetyDataTable = () => {
         </div>
     );
 }
+
+export const dataInputJenisMakanan = [
+    {
+        value: "",
+        menu: "Pilih Jenis Makanan "
+    },
+    {
+        value: "sembako",
+        menu: "Sembako"
+    },
+    {
+        value: "minuman",
+        menu: "Minuman"
+    },
+    {
+        value: "makanan berat",
+        menu: "Makanan Berat"
+    },
+    {
+        value: "makanan ringan",
+        menu: "Makanan Ringan"
+    },
+    {
+        value: "buah buahan",
+        menu: "Buah Buahan"
+    },
+    {
+        value: "kue dan roti",
+        menu: "Kue dan Roti"
+    }
+]

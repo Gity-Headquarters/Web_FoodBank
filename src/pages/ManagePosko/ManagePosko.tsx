@@ -11,27 +11,31 @@ import Modal from "../../components/Fragments/Modal/Modal"
 import { defaultImageModal, iconPencil } from "../../image"
 import InputForm from "../../components/Elements/Input/Input"
 import ButtonConfirm from "../../components/Elements/ButtonConfirm/ButtonConfirm"
-import { createBooth, getAllPosko } from "../../service/managePosko"
+import { createBooth, createFood, getAllPosko } from "../../service/managePosko"
 import toast from "react-hot-toast";
 import { Toaster } from "react-hot-toast";
 import Option from "../../components/Elements/Option/Option"
+import { dataInputJenisMakanan } from "../../utils/DataObject"
 
 interface Posko {
+    guid: ''
     name: string;
     address: string;
     time_open: string;
     food_total: number;
     image: string;
+    status: string
 }
 
 function ManagePosko() {
     const [loading, setLoading] = useState(true);
     const [dataPosko, setDataPosko] = useState<Posko[]>([])
     useEffect(() => {
-        getAllPosko((data: any) => {
-            setDataPosko(data)
-            setLoading(false)
-        })
+        getAllPosko((data: Posko[]) => {
+            const openPosko = data.filter(posko => posko.status === 'open');
+            setDataPosko(openPosko);
+            setLoading(false);
+        });
     }, []);
 
 
@@ -86,6 +90,35 @@ function ManagePosko() {
         setFormFood({ ...formFood, [name]: value });
     };
 
+    const handleAddFood = async (e: any) => {
+        e.preventDefault();
+        const apiRequest = new FormData();
+        apiRequest.append('image', formFood.image as File); // image is a File object
+        apiRequest.append('name', formFood.name);
+        apiRequest.append('jenis', formFood.jenis);
+        apiRequest.append('id_booth', formFood.id_booth);
+        apiRequest.append('jumlah', formFood.jumlah.toString());
+        await createFood(apiRequest, (status: boolean, res: any) => {
+            if (status) {
+                setFormFood({
+                    name: '',
+                    jenis: '',
+                    jumlah: '',
+                    id_booth: '',
+                    image: null as File | null,
+                })
+                getAllPosko((data: Posko[]) => {
+                    const openPosko = data.filter(posko => posko.status === 'open');
+                    setDataPosko(openPosko);
+                    setLoading(false);
+                });
+
+            } else {
+                console.log(res);
+            }
+        })
+    }
+
 
 
 
@@ -118,10 +151,11 @@ function ManagePosko() {
                     number_phone: ''
                 })
                 addPosko();
-                getAllPosko((data: any) => {
-                    setDataPosko(data)
-                    setLoading(false)
-                })
+                getAllPosko((data: Posko[]) => {
+                    const openPosko = data.filter(posko => posko.status === 'open');
+                    setDataPosko(openPosko);
+                    setLoading(false);
+                });
             } else {
                 console.log(res);
                 errorPosko();
@@ -305,7 +339,7 @@ function ManagePosko() {
                         <button className="btn-close border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close" />
                     </div>
 
-                    <form className="p-4" >
+                    <form className="p-4" onSubmit={handleAddFood} >
                         <div className="position-relative mx-auto mb-4">
                             <div className="image d-flex justify-content-center ">
                                 {formFood.image && formFood.image instanceof Blob ? (
@@ -328,24 +362,30 @@ function ManagePosko() {
                         <InputForm onChange={handleChange} htmlFor="name" value={formFood.name} title="Nama Makanan" type="text" />
                         <div className="name-booth mb-3 ">
                             <label htmlFor="id_booth"> Masukan Nama Posko</label >
-                            <select name="id_booth" value={formFood.id_booth} onChange={handleChange} className="form-select w-100 shadow-none" >
-                                <Option value={''} menu={'Choose...'} />
-                                <Option value={'Bakso'} menu={'Bakso'} />
-                                <Option value={'Mie ayang'} menu={'Mie ayang'} />
-                                <Option value={'Pentol'} menu={'Pentol'} />
+                            <select name="id_booth" value={formFood.id_booth} onChange={handleChange} className="form-select w-100 shadow-none mt-2" >
+                                <Option value={''} menu={'Pilih  Posko'} />
+                                {dataPosko.map((item, index) => (
+                                    <Option key={index} value={item.guid} menu={item.name} />
+                                ))}
                             </select>
                         </div>
-                        <div className="d-flex justify-content-between gap-3">
-                            <InputForm onChange={handleChange} htmlFor="time_open" value={formData.time_open} title="Masukan Jam Buka" type="text" />
-                            <InputForm onChange={handleChange} htmlFor="time_close" value={formData.time_close} title="Masukan Jam Tutup" type="text" />
+
+                        <div className="type-food mb-3 ">
+                            <label htmlFor="jenis">Jenis Makanan</label >
+                            <select name="jenis" value={formFood.jenis} onChange={handleChange} className="form-select w-100 shadow-none mt-2" >
+                                {dataInputJenisMakanan.map((item, index) => (
+                                    <Option key={index} value={item.value} menu={item.menu} />
+                                ))}
+                            </select>
                         </div>
-                        <div className="mb-3">
-                            <label htmlFor="address" className="form-label">Masukan Lokasi</label>
-                            <textarea className="form-control" value={formData.address} name="address" onChange={handleChange} style={{ height: 100 }}></textarea>
-                        </div>
+                        <InputForm onChange={handleChange} htmlFor="jumlah" value={formFood.jumlah} title="Jumlah Makanan" type="number" />
                         <div className="d-flex justify-content-end gap-3">
-                            <ButtonCancel >  Batal  </ButtonCancel>
-                            <ButtonConfirm type="submit" bsDismiss={"modal"}  > Simpan </ButtonConfirm>
+                            <ButtonCancel >
+                                Batal
+                            </ButtonCancel>
+                            <ButtonConfirm type="submit" bsDismiss={"modal"}  >
+                                Simpan
+                            </ButtonConfirm>
                         </div>
                     </form>
                 </Modal>

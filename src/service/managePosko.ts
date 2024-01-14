@@ -5,8 +5,8 @@ const url = process.env.BASE_API;
 
 // }
 
-export const createBooth = async (data: any, callback: any) => {
-    await axios.post(`${url}/booth`, data, {
+export const createBooth = async (formData: any, callback: any) => {
+    await axios.post(`${url}/booth`, formData, {
         headers: { 'Content-Type': 'multipart/form-data', }
     })
         .then((res) => {
@@ -27,4 +27,17 @@ export const getAllPosko = (callback: any) => {
             console.log(err);
 
         })
+}
+
+
+export const createFood = async (formData: any, callback: any) => {
+    await axios.post(`${url}/food`, formData, {
+        headers: { 'Content-Type': 'multipart/form-data', }
+    })
+        .then((res) => {
+            callback(true, res.data);
+        }).catch((err) => {
+            console.log(err);
+            callback(false, err);
+        });
 }
