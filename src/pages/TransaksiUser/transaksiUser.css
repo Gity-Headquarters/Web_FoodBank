@@ -25,3 +25,8 @@
     text-align: center;
 
 }
+
+.data-transaction-user .p-datatable-wrapper table tbody tr td a {
+    text-decoration: none;
+    color: #4b5563;
+}

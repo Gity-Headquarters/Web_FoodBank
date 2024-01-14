@@ -13,17 +13,16 @@ import { getAllTransaction } from "../../service/transactionUser"
 
 interface Transaksi {
     id: number
-    name: string;
-    address: string;
-    time_open: string;
-    food_total: number;
-    image: string;
+    guid: string;
+    booth_id: string;
+    status: string;
+
 }
 
 const TransaksiUser = () => {
     const [bgTransaction, setBgTransaction] = useState("allBooths");
     const [searchData, setSearchData] = useState("");
-    const [transaction, setTransaction] = useState([])
+    const [transaction, setTransaction] = useState<Transaksi[]>([]);
 
     const handleClick = (transactionType: string) => {
         setBgTransaction(transactionType);
@@ -35,26 +34,19 @@ const TransaksiUser = () => {
     }, []);
 
 
-    // const [dataPosko, setDataPosko] = useState<Posko[]>([])
-    // useEffect(() => {
-    //     getAllPosko((data: Posko[]) => {
-    //         setDataPosko(data); // Pastikan data tidak null atau undefined
-    //         console.log('ini', data);
-    //     });
-    // }, []);
+
+    useEffect(() => {
+        if (bgTransaction !== "allBooths") {
+            const reversedData = [...transaction].reverse();
+            setTransaction(reversedData);
+        } else {
+            const sortedData = [...transaction].sort((a, b) => a.id - b.id);
+            setTransaction(sortedData);
+        }
+    }, [bgTransaction]);
 
 
-
-    // useEffect(() => {
-    //     if (bgTransaction !== "allBooths") {
-    //         const reversedData = [...dataPosko].reverse();
-    //         setDataPosko(reversedData);
-    //     } else {
-    //         const sortedData = [...dataPosko].sort((a, b) => a.id - b.id);
-    //         setDataPosko(sortedData);
-    //     }
-    // }, [bgTransaction]);
-
+    console.log(transaction);
 
 
 
