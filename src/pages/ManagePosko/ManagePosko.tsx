@@ -14,6 +14,7 @@ import ButtonConfirm from "../../components/Elements/ButtonConfirm/ButtonConfirm
 import { createBooth, getAllPosko } from "../../service/managePosko"
 import toast from "react-hot-toast";
 import { Toaster } from "react-hot-toast";
+import Option from "../../components/Elements/Option/Option"
 
 interface Posko {
     name: string;
@@ -47,21 +48,42 @@ function ManagePosko() {
         number_phone: ''
     });
 
-    const handleFileManager = () => {
-        const fileInput = document.getElementById("imageInput") as HTMLInputElement | null;
-        if (fileInput) {
-            fileInput.click();
+    const [formFood, setFormFood] = useState({
+        name: '',
+        jenis: '',
+        jumlah: '',
+        id_booth: '',
+        image: null as File | null,
+    })
+
+    console.log(formFood);
+
+
+    const handleFileManager = (fileName: string) => {
+        if (fileName === 'add') {
+            const fileInput = document.getElementById("image-input-add") as HTMLInputElement | null;
+            fileInput ? fileInput.click() : null;
+        } else if (fileName === 'add-food') {
+            const fileInput = document.getElementById("image-input-add-food") as HTMLInputElement | null;
+            fileInput ? fileInput.click() : null;
         }
     };
 
-    const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const selectedImage = e.target.files?.[0];
-        setFormData({ ...formData, image: selectedImage || null });
-    };
+    const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>, InputSelect: string) => {
+        if (InputSelect === 'add') {
+            const selectedImage = e.target.files?.[0];
+            setFormData({ ...formData, image: selectedImage || null });
+        } else if (InputSelect === 'add-food') {
+            const selectedImage = e.target.files?.[0];
+            setFormFood({ ...formFood, image: selectedImage || null });
 
+        }
+
+    };
     const handleChange = (e: any) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
+        setFormFood({ ...formFood, [name]: value });
     };
 
 
@@ -107,8 +129,6 @@ function ManagePosko() {
         })
 
     }
-
-    console.log(formData);
     const addPosko = () =>
         toast.success("Posko berhasil di tambahkan ✨🚀", {
             duration: 4000,
@@ -162,7 +182,7 @@ function ManagePosko() {
                         <div className=" row  d-flex justify-content-between">
                             <h3 className="col-12 col-md-5 d-flex justify-content-center justify-content-md-start fw-semibold align-items-center" >Tambah Makanan & Posko</h3>
                             <div className="col-12 col-md-7 button-add d-flex gap-2  justify-content-center justify-content-md-end">
-                                <ButtonCancel className="fw-semibold d-flex gap-2 justify-content-center align-items-center"  >
+                                <ButtonCancel className="fw-semibold d-flex gap-2 justify-content-center align-items-center" bsTarget="#modal-add-food" bsTogle="modal"   >
                                     <BsPlus size={20} /> Tambah Makanan
                                 </ButtonCancel>
                                 <ButtonCancel className="fw-semibold" bsTarget="#modal-add" bsTogle="modal" >
@@ -196,12 +216,12 @@ function ManagePosko() {
                                                     <input
                                                         type="file"
                                                         className="d-none"
-                                                        id="imageInput"
-                                                        onChange={handleImageChange}
+                                                        id="image-input-update"
+                                                        onChange={(e) => handleImageChange(e, 'update')}
                                                     />
 
                                                     <button className="btn btn-input border-0 p-0 position-absolute bottom-0 end-0" type="button" >
-                                                        <img src={iconPencil} onClick={handleFileManager} />
+                                                        <img src={iconPencil} onClick={() => handleFileManager('update')} />
                                                     </button>
                                                 </div>
                                             </div>
@@ -249,12 +269,12 @@ function ManagePosko() {
                                 <input
                                     type="file"
                                     className="d-none"
-                                    id="imageInput"
-                                    onChange={handleImageChange}
+                                    id="image-input-add"
+                                    onChange={(e) => handleImageChange(e, 'add')}
                                 />
 
                                 <button className="btn btn-input border-0 p-0 position-absolute bottom-0 end-0" type="button" >
-                                    <img src={iconPencil} onClick={handleFileManager} />
+                                    <img src={iconPencil} onClick={() => handleFileManager('add')} />
                                 </button>
                             </div>
                         </div>
@@ -278,6 +298,58 @@ function ManagePosko() {
                         </div>
                     </form>
                 </Modal>
+
+                <Modal id={"modal-add-food"}>
+                    <div className="d-flex justify-content-between p-3 text-black fw-semibold">
+                        <h5>Tambah Makanan</h5>
+                        <button className="btn-close border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close" />
+                    </div>
+
+                    <form className="p-4" >
+                        <div className="position-relative mx-auto mb-4">
+                            <div className="image d-flex justify-content-center ">
+                                {formFood.image && formFood.image instanceof Blob ? (
+                                    <img src={URL.createObjectURL(formFood.image)} />
+                                ) : (
+                                    <img src={defaultImageModal} />
+                                )}
+
+                                <input
+                                    type="file"
+                                    className="d-none"
+                                    id="image-input-add-food"
+                                    onChange={(e) => handleImageChange(e, 'add-food')}
+                                />
+                                <button className="btn btn-input border-0 p-0 position-absolute bottom-0 end-0" type="button" >
+                                    <img src={iconPencil} onClick={() => handleFileManager('add-food')} />
+                                </button>
+                            </div>
+                        </div>
+                        <InputForm onChange={handleChange} htmlFor="name" value={formFood.name} title="Nama Makanan" type="text" />
+                        <div className="name-booth mb-3 ">
+                            <label htmlFor="id_booth"> Masukan Nama Posko</label >
+                            <select name="id_booth" value={formFood.id_booth} onChange={handleChange} className="form-select w-100 shadow-none" >
+                                <Option value={''} menu={'Choose...'} />
+                                <Option value={'Bakso'} menu={'Bakso'} />
+                                <Option value={'Mie ayang'} menu={'Mie ayang'} />
+                                <Option value={'Pentol'} menu={'Pentol'} />
+                            </select>
+                        </div>
+                        <div className="d-flex justify-content-between gap-3">
+                            <InputForm onChange={handleChange} htmlFor="time_open" value={formData.time_open} title="Masukan Jam Buka" type="text" />
+                            <InputForm onChange={handleChange} htmlFor="time_close" value={formData.time_close} title="Masukan Jam Tutup" type="text" />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="address" className="form-label">Masukan Lokasi</label>
+                            <textarea className="form-control" value={formData.address} name="address" onChange={handleChange} style={{ height: 100 }}></textarea>
+                        </div>
+                        <div className="d-flex justify-content-end gap-3">
+                            <ButtonCancel >  Batal  </ButtonCancel>
+                            <ButtonConfirm type="submit" bsDismiss={"modal"}  > Simpan </ButtonConfirm>
+                        </div>
+                    </form>
+                </Modal>
+
                 <div className="position-relative d-flex justify-content-end">
                     <Toaster />
                 </div>
