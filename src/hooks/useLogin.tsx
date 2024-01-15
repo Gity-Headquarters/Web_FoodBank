@@ -12,9 +12,7 @@ export const useLogin = () => {
         }
         const decoded: any = jwtDecode(token || '');
         const role = decoded.role;
-        if (role === 'admin') {
-            navigate('/dashboard');
-        } else {
+        if (role !== 'admin') {
             navigate('/');
         }
     }, []);

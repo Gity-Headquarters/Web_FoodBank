@@ -40,13 +40,14 @@ function Login() {
             [name]: value,
         };
 
-        if (updatedValues.email !== "" && updatedValues.password !== "" && updatedValues.email.includes('@test.com') || updatedValues.email.includes('@gmail.com')) {
+        if (updatedValues.email !== "" && updatedValues.password !== "" && (updatedValues.email.includes('@gmail.com') || updatedValues.email.includes('@test.com'))) {
             setButtonLogin(true);
             setDisabled(false);
         } else {
             setButtonLogin(false);
             setDisabled(true);
         }
+
     }
 
     const navigate = useNavigate();
