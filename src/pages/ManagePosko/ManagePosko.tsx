@@ -11,7 +11,7 @@ import Modal from "../../components/Fragments/Modal/Modal"
 import { defaultImageModal, iconPencil } from "../../image"
 import InputForm from "../../components/Elements/Input/Input"
 import ButtonConfirm from "../../components/Elements/ButtonConfirm/ButtonConfirm"
-import { createBooth, createFood, getAllPosko } from "../../service/managePosko"
+import { createBooth, createFood, getAllPosko, updateBooth } from "../../service/managePosko"
 import toast from "react-hot-toast";
 import { Toaster } from "react-hot-toast";
 import Option from "../../components/Elements/Option/Option"
@@ -63,8 +63,6 @@ function ManagePosko() {
         id_booth: '',
         image: null as File | null,
     })
-
-    console.log(formFood);
 
 
     const handleFileManager = (fileName: string) => {
@@ -132,8 +130,8 @@ function ManagePosko() {
 
 
 
+
     const handleCreateBooth = async (e: any) => {
-        e.preventDefault();
         const apiRequest = new FormData();
         apiRequest.append('image', formData.image as File); // image is a File object
         apiRequest.append('name', formData.name);
@@ -145,7 +143,7 @@ function ManagePosko() {
         apiRequest.append('status', formData.status);
         apiRequest.append('description', formData.description);
         apiRequest.append('number_phone', formData.number_phone);
-
+        e.preventDefault();
         await createBooth(apiRequest, (status: boolean, res: any) => {
             if (status) {
                 setFormData({
@@ -240,6 +238,30 @@ function ManagePosko() {
     }
 
 
+    const handleUpdatePosko = async (id: string) => {
+        const apiRequest = new FormData();
+        apiRequest.append('image', formData.image as File); // image is a File object
+        apiRequest.append('name', formData.name);
+        apiRequest.append('address', formData.address);
+        apiRequest.append('time_open', formData.time_open);
+        apiRequest.append('time_close', formData.time_close);
+        apiRequest.append('info_booth', formData.info_booth);
+        apiRequest.append('status', formData.status);
+        apiRequest.append('description', formData.description);
+        apiRequest.append('number_phone', formData.number_phone);
+        await updateBooth(id, apiRequest, (res: any) => {
+            deleleteState()
+            getAllPosko((data: Posko[]) => {
+                const openPosko = data.filter(posko => posko.status === 'open');
+                setDataPosko(openPosko);
+                setLoading(false);
+            });
+            addPosko()
+            console.log(res);
+        })
+    }
+
+
 
     console.log(formData);
 
@@ -259,6 +281,7 @@ function ManagePosko() {
     //         },
     //     });
 
+    console.log(dataPosko);
 
 
     return (
@@ -296,7 +319,7 @@ function ManagePosko() {
                                             <h5>Update Posko</h5>
                                             <button className="btn-close border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close" />
                                         </div>
-                                        <form className="p-4">
+                                        <form className="p-4" >
                                             <div className="position-relative mx-auto mb-4">
                                                 <div className="image d-flex justify-content-center ">
                                                     {formData.image && formData.image instanceof Blob ? (
@@ -329,10 +352,10 @@ function ManagePosko() {
                                                 <textarea className="form-control" value={formData.address} name="address" onChange={handleChange} style={{ height: 100 }}></textarea>
                                             </div>
                                             <div className="d-flex justify-content-end gap-3">
-                                                <ButtonCancel >
+                                                <ButtonCancel bsDismiss={"modal"} type="button" onclick={deleleteState}>
                                                     Batal
                                                 </ButtonCancel>
-                                                <ButtonConfirm>
+                                                <ButtonConfirm type="button" onclick={() => handleUpdatePosko(item.guid)} bsDismiss={"modal"}>
                                                     Simpan
                                                 </ButtonConfirm>
                                             </div>

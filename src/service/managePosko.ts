@@ -41,3 +41,16 @@ export const createFood = async (formData: any, callback: any) => {
             callback(false, err);
         });
 }
+
+
+export const updateBooth = async (id: string, formData: any, callback: any) => {
+    await axios.put(`${url}/booth/${id}`, formData, {
+        headers: { 'Content-Type': 'multipart/form-data', }
+    })
+        .then((res) => {
+            callback(res.data);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+}
