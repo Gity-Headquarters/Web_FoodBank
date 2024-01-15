@@ -265,8 +265,10 @@ function ManagePosko() {
     //         },
     //     });
 
-    console.log(dataPosko);
-
+    const handleCloslePosko = async (e: any, status: string) => {
+        e.preventDefault();
+        setFormData({ ...formData, status: status });
+    }
 
     return (
         <Layout>
@@ -295,9 +297,22 @@ function ManagePosko() {
                                 <React.Fragment key={index}>
                                     <PoskoList name={item.name} address={item.address} time_open={item.time_open} food_total={item.food_total} image={item.image}>
                                         <li><ButtonConfirm className='w-100 mb-1 text-white' bsTarget={`#modal-update${item.guid}`} bsTogle="modal" onclick={() => setFormData(item)}  >Update</ButtonConfirm></li>
-                                        <li><ButtonCancel className='w-100 btn btn-danger' >Tutup</ButtonCancel></li>
+                                        <li><ButtonCancel className='w-100 btn btn-danger' onclick={(e: any) => handleCloslePosko(e, 'close')} bsTarget={`#modal-close${item.guid}`} bsTogle="modal" >Tutup</ButtonCancel></li>
                                     </PoskoList>
+                                    <Modal id={`modal-close${item.guid}`}>
+                                        <div className="d-flex justify-content-between p-3 text-black fw-semibold">
+                                            <h5>Tutup Posko</h5>
+                                            <button className="btn-close border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close" />
+                                        </div>
 
+                                        <form className='p-4'>
+                                            <h5> Apakah Anda Ingin Menutup Nya ? </h5>
+                                            <div className="d-flex mt-4 gap-2 justify-content-end">
+                                                <ButtonCancel onclick={deleleteState} bsDismiss={"modal"} > Batal </ButtonCancel>
+                                                <ButtonConfirm type={"button"} bsDismiss={"modal"} onclick={() => handleUpdatePosko(item.guid)} >Tutup Posko</ButtonConfirm>
+                                            </div>
+                                        </form>
+                                    </Modal>
                                     <Modal id={`modal-update${item.guid}`}>
                                         <div className="d-flex justify-content-between p-3 text-black fw-semibold">
                                             <h5>Update Posko</h5>
