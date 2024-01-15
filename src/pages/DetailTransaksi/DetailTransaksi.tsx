@@ -74,7 +74,7 @@ const DetailTransaksi = () => {
         styleStatus = 'Di Setujui'
     }
     else if (transaction?.status === 'rejected') {
-        styleStatus = 'Ditolak'
+        styleStatus = 'Di Tolak'
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -141,9 +141,9 @@ const DetailTransaksi = () => {
                     <ListDetailTransaksi title="Lokasi Posko" text={transaction?.Booth.address || ''} />
                     <ListDetailTransaksi title="Status" text={styleStatus} />
                     <div className="d-flex mt-4 gap-2">
-                        <ButtonCancel className={styleStatus === "Selesai" || styleStatus === "Ditolak" || styleStatus === "Di Setujui" ? 'd-none' : 'd-block'}  > Tolak </ButtonCancel>
-                        <ButtonCancel className={styleStatus === "Selesai" || styleStatus === "Di Setujui" ? 'd-none' : 'd-block'} bsTarget="#modal-approve" bsTogle="modal" onclick={(e: any) => handleValueButton(e, 'approve')}  > Setujui </ButtonCancel>
-                        <ButtonConfirm className={styleStatus === "Selesai" ? 'd-none' : 'd-block'} bsTarget="#modal-taked" bsTogle="modal" onclick={(e: any) => handleValueButton(e, 'taked')}>Selesai</ButtonConfirm>
+                        <ButtonCancel className={styleStatus === "Selesai" || styleStatus === "Di Tolak" || styleStatus === "Di Setujui" ? 'd-none' : 'd-block'} bsTarget="#modal-reject" bsTogle="modal" onclick={(e: any) => handleValueButton(e, 'rejected')}  > Tolak </ButtonCancel>
+                        <ButtonCancel className={styleStatus === "Selesai" || styleStatus === "Di Setujui" || styleStatus === "Di Tolak" ? 'd-none' : 'd-block'} bsTarget="#modal-approve" bsTogle="modal" onclick={(e: any) => handleValueButton(e, 'approve')}  > Setujui </ButtonCancel>
+                        <ButtonConfirm className={styleStatus === "Selesai" || styleStatus === "Di Tolak" ? 'd-none' : 'd-block'} bsTarget="#modal-taked" bsTogle="modal" onclick={(e: any) => handleValueButton(e, 'taked')}>Selesai</ButtonConfirm>
                     </div>
                 </section>
                 <Modal id={"modal-taked"}>
@@ -180,7 +180,20 @@ const DetailTransaksi = () => {
                             <ButtonCancel onclick={deleteState} bsDismiss={"modal"} > Batal </ButtonCancel>
                             <ButtonConfirm onclick={handleApproveReject} bsDismiss={"modal"} >Setujui</ButtonConfirm>
                         </div>
+                    </form>
+                </Modal>
+                <Modal id={"modal-reject"}>
+                    <div className="d-flex justify-content-between p-3 text-black fw-semibold">
+                        <h5>Tambah Makanan</h5>
+                        <button className="btn-close border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close" />
+                    </div>
 
+                    <form className='p-4' action="">
+                        <h5> Apakah Anda Ingin Menolak nya ?</h5>
+                        <div className="d-flex mt-4 gap-2 justify-content-end">
+                            <ButtonCancel onclick={deleteState} bsDismiss={"modal"} > Batal </ButtonCancel>
+                            <ButtonConfirm onclick={handleApproveReject} bsDismiss={"modal"} >Tolak</ButtonConfirm>
+                        </div>
                     </form>
                 </Modal>
             </section>
