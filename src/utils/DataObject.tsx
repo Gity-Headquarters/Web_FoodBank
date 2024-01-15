@@ -246,24 +246,27 @@ const styleLocationBooth = (rowData: any) => {
 const styleStatusUser = (rowData: any) => {
     const [changeItemStatus, setChangeItemStatus] = useState("");
     useEffect(() => {
-        if (rowData.status === "accepted") {
+        if (rowData.status === "taked") {
             setChangeItemStatus("changeItemStatusAccepted")
         } else if (rowData.status === "waiting") {
             setChangeItemStatus("changeItemStatusWaiting")
+        } else if (rowData.status === "approve") {
+            setChangeItemStatus("changeItemStatusAccepted")
         } else {
             setChangeItemStatus("changeItemStatusRejected")
         }
-
     },);
 
     let statusLabel;
 
-    if (rowData.status === 'accepted') {
+    if (rowData.status === 'taked') {
         statusLabel = 'Selesai';
     } else if (rowData.status === 'waiting') {
         statusLabel = 'Menunggu';
+    } else if (rowData.status === 'approve') {
+        statusLabel = 'Di Setujui';
     } else {
-        statusLabel = 'Status Di Tolak';
+        statusLabel = 'Di Tolak';
     }
 
     return (

@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Layout from '../../Layout/Layout'
 import { useParams } from 'react-router-dom'
 import { getAllFood, getDetailTransaction, updateTransaction } from '../../service/transactionUser'
@@ -139,6 +139,7 @@ const DetailTransaksi = () => {
                     <form className='p-4' action="">
                         <InputForm styleTitle="text-black fw-semibold" type='number' onChange={handleChange} htmlFor="total" value={formData.total} title="Masukan Jumlah" />
                         <select name="food_id" value={formData.food_id} onChange={handleChange} className="form-select  w-100 shadow-none mt-2 " >
+                            <Option value={''} menu={'Pilih  Makanan'} />
                             {food.map((item, index) => (
                                 <Option key={index} value={item.guid} menu={item.name} />
                             ))}

@@ -24,3 +24,13 @@
     color: #FF7F0A;
     border: 1px solid #FF7F0A;
 }
+
+.detail-transaction .modal input {
+    border: 1px solid #CBCBCB;
+}
+
+.detail-transaction .modal select {
+    border: 1px solid #FF7F0A;
+    color: #FF7F0A;
+    cursor: pointer;
+}
