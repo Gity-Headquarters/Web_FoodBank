@@ -23,8 +23,12 @@ interface Posko {
     address: string;
     time_open: string;
     food_total: number;
-    image: string;
-    status: string
+    image: any;
+    info_booth: string,
+    status: string,
+    description: string,
+    number_phone: string
+    time_close: string
 }
 
 function ManagePosko() {
@@ -70,6 +74,9 @@ function ManagePosko() {
         } else if (fileName === 'add-food') {
             const fileInput = document.getElementById("image-input-add-food") as HTMLInputElement | null;
             fileInput ? fileInput.click() : null;
+        } else if (fileName === 'update') {
+            const fileInput = document.getElementById("imageUpdate") as HTMLInputElement | null;
+            fileInput ? fileInput.click() : null;
         }
     };
 
@@ -80,7 +87,9 @@ function ManagePosko() {
         } else if (InputSelect === 'add-food') {
             const selectedImage = e.target.files?.[0];
             setFormFood({ ...formFood, image: selectedImage || null });
-
+        } else if (InputSelect === 'update') {
+            const selectedImage = e.target.files?.[0];
+            setFormData({ ...formData, image: selectedImage || null });
         }
 
     };
@@ -232,6 +241,11 @@ function ManagePosko() {
 
 
 
+    console.log(formData);
+
+
+
+
     // const updateKonseling = () =>
     //     toast.success("Paket konseling berhasil update ✨🚀", {
     //         duration: 4000,
@@ -272,8 +286,12 @@ function ManagePosko() {
                         {loading ? <CardPoskoLoader numberOfCards={8} />
                             : dataPosko.map((item, index) => (
                                 <React.Fragment key={index}>
-                                    <PoskoList name={item.name} address={item.address} time_open={item.time_open} food_total={item.food_total} image={item.image} />
-                                    <Modal id={"modal-update"}>
+                                    <PoskoList name={item.name} address={item.address} time_open={item.time_open} food_total={item.food_total} image={item.image}>
+                                        <li><ButtonConfirm className='w-100 mb-1 text-white' bsTarget={`#modal-update${item.guid}`} bsTogle="modal" onclick={() => setFormData(item)}  >Update</ButtonConfirm></li>
+                                        <li><ButtonCancel className='w-100 btn btn-danger' >Tutup</ButtonCancel></li>
+                                    </PoskoList>
+
+                                    <Modal id={`modal-update${item.guid}`}>
                                         <div className="d-flex justify-content-between p-3 text-black fw-semibold">
                                             <h5>Update Posko</h5>
                                             <button className="btn-close border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close" />
@@ -283,14 +301,15 @@ function ManagePosko() {
                                                 <div className="image d-flex justify-content-center ">
                                                     {formData.image && formData.image instanceof Blob ? (
                                                         <img src={URL.createObjectURL(formData.image)} />
+                                                    ) : item.image ? (
+                                                        <img src={item.image} alt="image-api" />
                                                     ) : (
                                                         <img src={defaultImageModal} />
                                                     )}
-
                                                     <input
                                                         type="file"
                                                         className="d-none"
-                                                        id="image-input-update"
+                                                        id="imageUpdate"
                                                         onChange={(e) => handleImageChange(e, 'update')}
                                                     />
 

@@ -1,18 +1,17 @@
 import Card from '../../Elements/Card/Card'
 import { iconFood, iconMap, iconWatch } from '../../../image'
 import { HiDotsHorizontal } from 'react-icons/hi'
-import ButtonConfirm from '../../Elements/ButtonConfirm/ButtonConfirm'
-import ButtonCancel from '../../Elements/ButtonCancel/ButtonCancel'
 
 type Props = {
     name: string,
     food_total?: number,
     address: string,
     time_open: string,
-    image: string
+    image: any
+    children?: React.ReactNode
 }
 
-function PoskoList({ name, food_total, address, time_open, image }: Props) {
+function PoskoList({ name, food_total, address, time_open, image, children }: Props) {
     const maxLength = 24
     const shortText = address.length > maxLength ? address.slice(0, maxLength) + "..." : address
     return (
@@ -40,8 +39,7 @@ function PoskoList({ name, food_total, address, time_open, image }: Props) {
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false"><HiDotsHorizontal /></button>
                             <ul className="dropdown-menu p-2 border-0">
-                                <li><ButtonConfirm className='w-100 mb-1 text-white' bsTarget="#modal-update" bsTogle="modal" >Update</ButtonConfirm></li>
-                                <li><ButtonCancel className='w-100 btn btn-danger' >Tutup</ButtonCancel></li>
+                                {children}
                             </ul>
                         </div>
                     </div>
