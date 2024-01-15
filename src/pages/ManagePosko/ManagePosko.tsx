@@ -302,7 +302,7 @@ function ManagePosko() {
                                     <Modal id={`modal-close${item.guid}`}>
                                         <div className="d-flex justify-content-between p-3 text-black fw-semibold">
                                             <h5>Tutup Posko</h5>
-                                            <button className="btn-close border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close" />
+                                            <button className="btn-close border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close" onClick={deleleteState} />
                                         </div>
 
                                         <form className='p-4'>
