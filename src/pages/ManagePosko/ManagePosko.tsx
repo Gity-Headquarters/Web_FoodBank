@@ -124,18 +124,19 @@ function ManagePosko() {
 
 
 
-    const apiRequestCreateBooth = new FormData();
-    apiRequestCreateBooth.append('image', formData.image as File); // image is a File object
-    apiRequestCreateBooth.append('name', formData.name);
-    apiRequestCreateBooth.append('address', formData.address);
-    apiRequestCreateBooth.append('time_open', formData.time_open);
-    apiRequestCreateBooth.append('time_close', formData.time_close);
-    apiRequestCreateBooth.append('food_total', formData.food_total.toString());
-    apiRequestCreateBooth.append('info_booth', formData.info_booth);
-    apiRequestCreateBooth.append('status', formData.status);
-    apiRequestCreateBooth.append('description', formData.description);
-    apiRequestCreateBooth.append('number_phone', formData.number_phone);
+
     const handleCreateBooth = async (e: any) => {
+        const apiRequestCreateBooth = new FormData();
+        apiRequestCreateBooth.append('image', formData.image as File); // image is a File object
+        apiRequestCreateBooth.append('name', formData.name);
+        apiRequestCreateBooth.append('address', formData.address);
+        apiRequestCreateBooth.append('time_open', formData.time_open);
+        apiRequestCreateBooth.append('time_close', formData.time_close);
+        apiRequestCreateBooth.append('food_total', formData.food_total.toString());
+        apiRequestCreateBooth.append('info_booth', formData.info_booth);
+        apiRequestCreateBooth.append('status', formData.status);
+        apiRequestCreateBooth.append('description', formData.description);
+        apiRequestCreateBooth.append('number_phone', formData.number_phone);
         e.preventDefault();
         await createBooth(apiRequestCreateBooth, (status: boolean, res: any) => {
             if (status) {
