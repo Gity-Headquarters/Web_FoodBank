@@ -149,7 +149,7 @@ const DetailTransaksi = () => {
                 <Modal id={"modal-taked"}>
                     <div className="d-flex justify-content-between p-3 text-black fw-semibold">
                         <h5>Selesaikan Transaksi</h5>
-                        <button className="btn-close border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close" />
+                        <button className="btn-close border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close" onClick={deleteState} />
                     </div>
 
                     <form className='p-4' action="">
@@ -171,7 +171,7 @@ const DetailTransaksi = () => {
                 <Modal id={"modal-approve"}>
                     <div className="d-flex justify-content-between p-3 text-black fw-semibold">
                         <h5>Setujui Transaksi</h5>
-                        <button className="btn-close border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close" />
+                        <button className="btn-close border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close" onClick={deleteState} />
                     </div>
 
                     <form className='p-4' action="">
@@ -185,7 +185,7 @@ const DetailTransaksi = () => {
                 <Modal id={"modal-reject"}>
                     <div className="d-flex justify-content-between p-3 text-black fw-semibold">
                         <h5>Tolak Transaksi</h5>
-                        <button className="btn-close border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close" />
+                        <button className="btn-close border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close" onClick={deleteState} />
                     </div>
 
                     <form className='p-4' action="">
