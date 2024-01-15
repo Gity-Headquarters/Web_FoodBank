@@ -5,6 +5,8 @@ import DanaAdmin from './pages/DanaAdmin/DanaAdmin';
 import TotalPosko from './pages/TotalPosko/TotalPosko';
 import ManagePosko from './pages/ManagePosko/ManagePosko';
 import TransaksiUser from './pages/TransaksiUser/TransaksiUser';
+import DetailTransaksi from './pages/DetailTransaksi/DetailTransaksi';
+
 function App() {
 
   return (
@@ -16,6 +18,7 @@ function App() {
       <Route path="/total-posko" element={<TotalPosko />} />
       <Route path="/manage-posko" element={<ManagePosko />} />
       <Route path="/transaksi-user" element={<TransaksiUser />} />
+      <Route path="/transaksi-user/detail-transaksi/:id" element={<DetailTransaksi />} />
     </Routes>
 
   )

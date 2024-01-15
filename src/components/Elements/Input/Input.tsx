@@ -5,7 +5,7 @@ type Props = {
     title?: string
     type: string
     onChange: any
-    value: string
+    value: number | string
     placeholder?: string,
     className?: string
     styleTitle?: string

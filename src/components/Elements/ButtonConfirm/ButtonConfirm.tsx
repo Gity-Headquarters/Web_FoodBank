@@ -8,11 +8,12 @@ type Props = {
     bsDismiss?: string,
     onSubmit?: any
     type?: any
+    onclick?: any
 }
 
-function ButtonConfirm({ children, className, ariaLabel, bsTogle, bsTarget, bsDismiss, onSubmit, type }: Props): JSX.Element {
+function ButtonConfirm({ children, className, ariaLabel, bsTogle, bsTarget, bsDismiss, onSubmit, type, onclick }: Props): JSX.Element {
     return (
-        <button className={`btn btn-confirm ${className}`} aria-label={ariaLabel} data-bs-toggle={bsTogle} onSubmit={onSubmit}
+        <button className={`btn btn-confirm ${className}`} aria-label={ariaLabel} data-bs-toggle={bsTogle} onSubmit={onSubmit} onClick={onclick}
             data-bs-target={bsTarget} data-bs-dismiss={bsDismiss} type={type} >{children} </button>
     )
 }

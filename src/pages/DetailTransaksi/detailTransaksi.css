@@ -1,0 +1,26 @@
+.hero-transaction {
+    font-family: 'Inter', sans-serif;
+    background-color: #FFFFFF;
+}
+
+.detail-transaction .hero-transaction .btn-cancel {
+    background-color: #FFFF;
+    color: #FF7F0A;
+    border: 1px solid #FF7F0A;
+}
+
+.detail-transaction .hero-transaction .btn-cancel:hover {
+    background-color: #FF7F0A;
+    color: #FFFF;
+}
+
+.detail-transaction .hero-transaction .btn-confirm {
+    background-color: #FF7F0A;
+    color: #FFFF;
+}
+
+.detail-transaction .hero-transaction .btn-confirm:hover {
+    background-color: #FFFF;
+    color: #FF7F0A;
+    border: 1px solid #FF7F0A;
+}

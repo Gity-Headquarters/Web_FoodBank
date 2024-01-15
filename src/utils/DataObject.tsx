@@ -228,7 +228,7 @@ export const dataInputJenisMakanan = [
 
 const styleNameTransaksiUser = (rowData: any) => {
     return (
-        <Link to={`/${rowData.guid}`} >
+        <Link to={`/transaksi-user/detail-transaksi/${rowData.guid}`} >
             {rowData.User.username}
         </Link>
     )

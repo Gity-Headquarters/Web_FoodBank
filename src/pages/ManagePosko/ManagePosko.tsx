@@ -87,7 +87,6 @@ function ManagePosko() {
     const handleChange = (e: any) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
-        setFormFood({ ...formFood, [name]: value });
     };
 
     const handleAddFood = async (e: any) => {
