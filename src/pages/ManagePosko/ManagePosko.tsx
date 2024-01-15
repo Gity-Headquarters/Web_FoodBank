@@ -94,6 +94,7 @@ function ManagePosko() {
     const handleChange = (e: any) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
+        setFormFood({ ...formFood, [name]: value });
     };
 
     const handleAddFood = async (e: any) => {
@@ -106,18 +107,11 @@ function ManagePosko() {
         apiRequest.append('jumlah', formFood.jumlah.toString());
         await createFood(apiRequest, (status: boolean, res: any) => {
             if (status) {
-                setFormFood({
-                    name: '',
-                    jenis: '',
-                    jumlah: '',
-                    id_booth: '',
-                    image: null as File | null,
-                })
+                deleleteState()
                 getAllPosko((data: Posko[]) => {
                     const openPosko = data.filter(posko => posko.status === 'open');
                     setDataPosko(openPosko);
                     setLoading(false);
-
                 });
                 addFood()
             } else {
@@ -130,40 +124,29 @@ function ManagePosko() {
 
 
 
-
+    const apiRequestCreateBooth = new FormData();
+    apiRequestCreateBooth.append('image', formData.image as File); // image is a File object
+    apiRequestCreateBooth.append('name', formData.name);
+    apiRequestCreateBooth.append('address', formData.address);
+    apiRequestCreateBooth.append('time_open', formData.time_open);
+    apiRequestCreateBooth.append('time_close', formData.time_close);
+    apiRequestCreateBooth.append('food_total', formData.food_total.toString());
+    apiRequestCreateBooth.append('info_booth', formData.info_booth);
+    apiRequestCreateBooth.append('status', formData.status);
+    apiRequestCreateBooth.append('description', formData.description);
+    apiRequestCreateBooth.append('number_phone', formData.number_phone);
     const handleCreateBooth = async (e: any) => {
-        const apiRequest = new FormData();
-        apiRequest.append('image', formData.image as File); // image is a File object
-        apiRequest.append('name', formData.name);
-        apiRequest.append('address', formData.address);
-        apiRequest.append('time_open', formData.time_open);
-        apiRequest.append('time_close', formData.time_close);
-        apiRequest.append('food_total', formData.food_total.toString());
-        apiRequest.append('info_booth', formData.info_booth);
-        apiRequest.append('status', formData.status);
-        apiRequest.append('description', formData.description);
-        apiRequest.append('number_phone', formData.number_phone);
         e.preventDefault();
-        await createBooth(apiRequest, (status: boolean, res: any) => {
+        await createBooth(apiRequestCreateBooth, (status: boolean, res: any) => {
             if (status) {
-                setFormData({
-                    image: null as File | null,
-                    name: '',
-                    address: '',
-                    time_open: ``,
-                    time_close: '',
-                    food_total: 1,
-                    info_booth: 'infoBooth',
-                    status: 'close',
-                    description: 'description',
-                    number_phone: ''
-                })
-                addPosko();
                 getAllPosko((data: Posko[]) => {
                     const openPosko = data.filter(posko => posko.status === 'open');
                     setDataPosko(openPosko);
                     setLoading(false);
                 });
+                console.log(res);
+                addPosko();
+                deleleteState()
             } else {
                 console.log(res);
                 error();
@@ -223,7 +206,7 @@ function ManagePosko() {
             time_close: '',
             food_total: 1,
             info_booth: 'infoBooth',
-            status: 'close',
+            status: 'open',
             description: 'description',
             number_phone: ''
         })
@@ -317,7 +300,7 @@ function ManagePosko() {
                                     <Modal id={`modal-update${item.guid}`}>
                                         <div className="d-flex justify-content-between p-3 text-black fw-semibold">
                                             <h5>Update Posko</h5>
-                                            <button className="btn-close border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close" />
+                                            <button className="btn-close border-0 shadow-none" data-bs-dismiss="modal" aria-label="Close" onClick={deleleteState} />
                                         </div>
                                         <form className="p-4" >
                                             <div className="position-relative mx-auto mb-4">
